@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "no-more-popups",
+	"version": "${version}",
+	"name": "No More Popups",
+	"description": "Removes in-game pop-ups (New Recipe Unlocked and more)",
+	"authors": [
+		"Alfakynz"
+	],
+	"contact": {
+		"homepage": "https://github.com/Alfakynz/No-More-Popups",
+		"sources": "https://github.com/Alfakynz/No-More-Popups"
+	},
+	"license": "MIT",
+	"icon": "assets/no-more-popups/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.alfakynz.nomorepopups.NoMorePopups"
+		],
+		"fabric-datagen": [
+			"com.alfakynz.nomorepopups.NoMorePopupsDataGenerator"
+		],
+		"client": [
+			"com.alfakynz.nomorepopups.NoMorePopupsClient"
+		],
+		"modmenu": [
+			"com.alfakynz.nomorepopups.config.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"no-more-popups.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*",
+		"cloth-config": "*"
+	}
+}
