@@ -2,14 +2,15 @@
 	"schemaVersion": 1,
 	"id": "no-more-popups",
 	"version": "${version}",
-	"name": "No More Popups",
+	"name": "No More Pop-ups",
 	"description": "Removes in-game pop-ups (New Recipe Unlocked and more)",
 	"authors": [
 		"Alfakynz"
 	],
 	"contact": {
 		"homepage": "https://github.com/Alfakynz/No-More-Popups",
-		"sources": "https://github.com/Alfakynz/No-More-Popups"
+		"sources": "https://github.com/Alfakynz/No-More-Popups",
+		"issues": "https://github.com/Alfakynz/No-More-Popups/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/no-more-popups/icon.png",

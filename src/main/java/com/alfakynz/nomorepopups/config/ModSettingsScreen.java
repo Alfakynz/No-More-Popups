@@ -6,11 +6,10 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.text.Text;
 
 public class ModSettingsScreen extends Screen {
-
     private final Screen parent;
 
     public ModSettingsScreen(Screen parent) {
-        super(Text.of("No More Popups Settings"));
+        super(Text.translatable("option.no_more_popups.settings"));
         this.parent = parent;
     }
 
@@ -20,17 +19,17 @@ public class ModSettingsScreen extends Screen {
         int y = this.height / 3;
 
         this.addDrawableChild(ButtonWidget.builder(
-                Text.of(getToggleText(ModConfig.INSTANCE.disableRecipeToasts)),
+                Text.translatable(getToggleText(ModConfig.INSTANCE.disableRecipeToasts)),
                 button -> {
                     ModConfig.INSTANCE.disableRecipeToasts = !ModConfig.INSTANCE.disableRecipeToasts;
-                    button.setMessage(Text.of(getToggleText(ModConfig.INSTANCE.disableRecipeToasts)));
+                    button.setMessage(Text.translatable(getToggleText(ModConfig.INSTANCE.disableRecipeToasts)));
                 }
         ).position(centerX - 100, y).size(200, 20).build());
 
         y += 32;
 
         this.addDrawableChild(ButtonWidget.builder(
-                Text.of("Save and Return"),
+                Text.translatable("option.no_more_popups.settings.done"),
                 button -> {
                     ModConfig.save();
                     assert this.client != null;
@@ -46,6 +45,6 @@ public class ModSettingsScreen extends Screen {
     }
 
     private String getToggleText(boolean enabled) {
-        return "Disable Recipe Toasts: " + (enabled ? "ON" : "OFF");
+        return "option.no_more_popups.settings.disable_recipe_toasts." + (enabled ? "on" : "off");
     }
 }

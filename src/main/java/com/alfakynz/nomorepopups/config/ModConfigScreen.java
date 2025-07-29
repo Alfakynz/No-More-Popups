@@ -9,13 +9,13 @@ public class ModConfigScreen {
     public static Screen create(Screen parent) {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.literal("No More Popups Settings"))
+                .setTitle(Text.translatable("option.no_more_popups.settings"))
                 .setSavingRunnable(ModConfig::save);
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-        builder.getOrCreateCategory(Text.literal("General"))
-                .addEntry(entryBuilder.startBooleanToggle(Text.literal("Disable Recipe Toasts"), ModConfig.INSTANCE.disableRecipeToasts)
+        builder.getOrCreateCategory(Text.translatable("option.no_more_popups.settings.general"))
+                .addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.no_more_popups.settings.disable_recipe_toasts"), ModConfig.INSTANCE.disableRecipeToasts)
                         .setDefaultValue(true)
                         .setSaveConsumer(newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue)
                         .build());
