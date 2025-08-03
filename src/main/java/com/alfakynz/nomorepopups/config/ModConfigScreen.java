@@ -19,6 +19,12 @@ public class ModConfigScreen {
                         .setDefaultValue(true)
                         .setSaveConsumer(newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue)
                         .build());
+        
+        builder.getOrCreateCategory(Text.translatable("option.no_more_popups.settings.general"))
+                .addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.no_more_popups.settings.disable_tutorial_toasts"), ModConfig.INSTANCE.disableTutorialToasts)
+                        .setDefaultValue(true)
+                        .setSaveConsumer(newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue)
+                        .build());
 
         return builder.build();
     }

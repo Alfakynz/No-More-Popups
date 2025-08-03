@@ -3,6 +3,9 @@
   "option.no_more_popups.settings.disable_recipe_toasts": "Disable Recipe Toasts",
   "option.no_more_popups.settings.disable_recipe_toasts.on": "Disable Recipe Toasts: Yes",
   "option.no_more_popups.settings.disable_recipe_toasts.off": "Disable Recipe Toasts: No",
+  "option.no_more_popups.settings.disable_tutorial_toasts": "Disable Tutorial Toasts",
+  "option.no_more_popups.settings.disable_tutorial_toasts.on": "Disable Tutorial Toasts: Yes",
+  "option.no_more_popups.settings.disable_tutorial_toasts.off": "Disable Tutorial Toasts: No",
   "option.no_more_popups.settings.done": "Done",
   "option.no_more_popups.settings.general": "General",
 

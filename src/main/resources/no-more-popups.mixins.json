@@ -1,14 +1,12 @@
 {
-	"required": true,
-	"package": "com.alfakynz.nomorepopups.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"RecipeToastManagerMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+  "required": true,
+  "package": "com.alfakynz.nomorepopups.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["ToastManagerMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }

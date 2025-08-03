@@ -10,6 +10,7 @@ public class ModConfig {
     private static final File CONFIG_FILE = new File("config/no-more-popups.json");
 
     public boolean disableRecipeToasts = true;
+    public boolean disableTutorialToasts = true;
 
     public static ModConfig INSTANCE = new ModConfig();
 

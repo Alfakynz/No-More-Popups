@@ -19,14 +19,22 @@ public class ModSettingsScreen extends Screen {
         int y = this.height / 3;
 
         this.addDrawableChild(ButtonWidget.builder(
-                Text.translatable(getToggleText(ModConfig.INSTANCE.disableRecipeToasts)),
+                Text.translatable(getToggleText(ModConfig.INSTANCE.disableRecipeToasts,  "disable_recipe_toasts")),
                 button -> {
                     ModConfig.INSTANCE.disableRecipeToasts = !ModConfig.INSTANCE.disableRecipeToasts;
-                    button.setMessage(Text.translatable(getToggleText(ModConfig.INSTANCE.disableRecipeToasts)));
+                    button.setMessage(Text.translatable(getToggleText(ModConfig.INSTANCE.disableRecipeToasts, "disable_recipe_toasts")));
                 }
         ).position(centerX - 100, y).size(200, 20).build());
 
         y += 32;
+
+        this.addDrawableChild(ButtonWidget.builder(
+                Text.translatable(getToggleText(ModConfig.INSTANCE.disableTutorialToasts, "disable_tutorial_toasts")),
+                button -> {
+                    ModConfig.INSTANCE.disableTutorialToasts = !ModConfig.INSTANCE.disableTutorialToasts;
+                    button.setMessage(Text.translatable(getToggleText(ModConfig.INSTANCE.disableTutorialToasts, "disable_tutorial_toasts")));
+                }
+        ).position(centerX - 100, y).size(200, 20).build());
 
         this.addDrawableChild(ButtonWidget.builder(
                 Text.translatable("option.no_more_popups.settings.done"),
@@ -44,7 +52,7 @@ public class ModSettingsScreen extends Screen {
         context.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, 20, 0xFFFFFF);
     }
 
-    private String getToggleText(boolean enabled) {
-        return "option.no_more_popups.settings.disable_recipe_toasts." + (enabled ? "on" : "off");
+    private String getToggleText(boolean enabled, String text) {
+        return "option.no_more_popups.settings." + text + "." + (enabled ? "on" : "off");
     }
 }

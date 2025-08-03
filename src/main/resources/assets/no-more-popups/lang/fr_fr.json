@@ -3,6 +3,9 @@
   "option.no_more_popups.settings.disable_recipe_toasts": "Désactiver les Nouvelles Recettes",
   "option.no_more_popups.settings.disable_recipe_toasts.on": "Désactiver les Nouvelles Recettes: Oui",
   "option.no_more_popups.settings.disable_recipe_toasts.off": "Désactiver les Nouvelles Recettes: Non",
+  "option.no_more_popups.settings.disable_tutorial_toasts": "Désactiver les Tutoriels",
+  "option.no_more_popups.settings.disable_tutorial_toasts.on": "Désactiver les Tutoriels: Oui",
+  "option.no_more_popups.settings.disable_tutorial_toasts.off": "Désactiver les Tutoriels: Non",
   "option.no_more_popups.settings.done": "Terminé",
   "option.no_more_popups.settings.general": "Général",
 
