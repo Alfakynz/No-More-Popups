@@ -36,6 +36,18 @@ public class ModSettingsScreen extends Screen {
                 }
         ).position(centerX - 100, y).size(200, 20).build());
 
+        y += 32;
+
+        this.addDrawableChild(ButtonWidget.builder(
+                Text.translatable(getToggleText(ModConfig.INSTANCE.disableAdvancementToasts, "disable_advancement_toasts")),
+                button -> {
+                    ModConfig.INSTANCE.disableAdvancementToasts = !ModConfig.INSTANCE.disableAdvancementToasts;
+                    button.setMessage(Text.translatable(getToggleText(ModConfig.INSTANCE.disableAdvancementToasts, "disable_advancement_toasts")));
+                }
+        ).position(centerX - 100, y).size(200, 20).build());
+
+        y += 32;
+
         this.addDrawableChild(ButtonWidget.builder(
                 Text.translatable("option.no_more_popups.settings.done"),
                 button -> {

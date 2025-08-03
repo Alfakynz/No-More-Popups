@@ -6,6 +6,7 @@
 
 - Removes _"New Recipe Unlocked!"_ pop-ups
 - Remove Tutorial pop-ups
+- Remove Advancement pop-ups
 - Settings to configure which pop-ups appear
 
 ## 🔄 Versions
@@ -43,6 +44,6 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Remove advancement pop-ups
 - Remove advancements messages in chat
 - Remove resource pack warning
+- Remove experimental world warning

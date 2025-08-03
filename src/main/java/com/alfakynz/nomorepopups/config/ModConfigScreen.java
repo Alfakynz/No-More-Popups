@@ -26,6 +26,12 @@ public class ModConfigScreen {
                         .setSaveConsumer(newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue)
                         .build());
 
+        builder.getOrCreateCategory(Text.translatable("option.no_more_popups.settings.general"))
+                .addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.no_more_popups.settings.disable_advancement_toasts"), ModConfig.INSTANCE.disableAdvancementToasts)
+                        .setDefaultValue(true)
+                        .setSaveConsumer(newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue)
+                        .build());
+
         return builder.build();
     }
 }

@@ -1,9 +1,10 @@
 package com.alfakynz.nomorepopups.mixin;
 
 import com.alfakynz.nomorepopups.config.ModConfig;
-import net.minecraft.client.toast.RecipeToast;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
+import net.minecraft.client.toast.AdvancementToast;
+import net.minecraft.client.toast.RecipeToast;
 import net.minecraft.client.toast.TutorialToast;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,6 +23,13 @@ public class ToastManagerMixin {
     @Inject(method = "add", at = @At("HEAD"), cancellable = true)
     private void blockTutorialToast(Toast toast, CallbackInfo ci) {
         if (toast instanceof TutorialToast && ModConfig.INSTANCE.disableTutorialToasts) {
+            ci.cancel();
+        }
+    }
+
+    @Inject(method = "add", at = @At("HEAD"), cancellable = true)
+    private void blockAdvancementToast(Toast toast, CallbackInfo ci) {
+        if (toast instanceof AdvancementToast && ModConfig.INSTANCE.disableAdvancementToasts) {
             ci.cancel();
         }
     }

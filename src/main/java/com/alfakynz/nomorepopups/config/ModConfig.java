@@ -11,6 +11,7 @@ public class ModConfig {
 
     public boolean disableRecipeToasts = true;
     public boolean disableTutorialToasts = true;
+    public boolean disableAdvancementToasts = true;
 
     public static ModConfig INSTANCE = new ModConfig();
 
