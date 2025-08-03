@@ -5,13 +5,14 @@
 ## ✨ Features
 
 - Removes _"New Recipe Unlocked!"_ pop-ups
+- Remove Tutorial pop-ups
 - Settings to configure which pop-ups appear
 
 ## 🔄 Versions
 
 This mod is currently made for Minecraft 1.21.1.
-It should work on other versions, but they haven't been tested yet. 
-Support for other versions is planned. 
+It should work on other versions, but they haven't been tested yet.
+Support for other versions is planned.
 
 ## 📦 Installation
 
