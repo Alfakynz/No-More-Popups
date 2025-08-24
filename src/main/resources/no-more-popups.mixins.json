@@ -2,7 +2,7 @@
   "required": true,
   "package": "com.alfakynz.nomorepopups.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["ToastManagerMixin"],
+  "mixins": ["ToastManagerMixin", "ResourcePackMixin"],
   "injectors": {
     "defaultRequire": 1
   },

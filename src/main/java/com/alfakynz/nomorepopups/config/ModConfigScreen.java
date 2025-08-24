@@ -23,7 +23,8 @@ public class ModConfigScreen {
         Setting[] settings = new Setting[] {
             new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue),
             new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue),
-            new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue)
+            new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue),
+            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue)
         };
 
         for (Setting setting : settings) {

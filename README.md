@@ -7,6 +7,7 @@
 - Removes _"New Recipe Unlocked!"_ pop-ups
 - Remove Tutorial pop-ups
 - Remove Advancement pop-ups
+- Remove resource pack warning
 - Settings to configure which pop-ups appear
 
 ## 🔄 Versions
@@ -18,9 +19,8 @@
 
 ### 👤 For users
 
-1. Go to the latest [releases](https://github.com/Alfakynz/No-More-Popups/releases/latest)
-2. Download `no-more-popups-x.x.x.jar`
-3. Move the downloaded file into your mods folder
+1. Search and download No More Pop-ups from [Modrinth](https://modrinth.com/project/sAdB6HVW) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-more-popups)
+2. Move the downloaded file into your mods folder
 
 ### 👨‍💻 For dev
 
@@ -44,5 +44,4 @@ If you have any questions, feel free to join the [Discord server](https://discor
 ## 🚀 Planned Features
 
 - Remove advancements messages in chat
-- Remove resource pack warning
 - Remove experimental world warning

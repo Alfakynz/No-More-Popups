@@ -33,7 +33,11 @@ public class ModSettingsScreen extends Screen {
 
             new ToggleOption("option.no_more_popups.settings.disable_advancement_toasts",
                 () -> ModConfig.INSTANCE.disableAdvancementToasts,
-                value -> ModConfig.INSTANCE.disableAdvancementToasts = value)
+                value -> ModConfig.INSTANCE.disableAdvancementToasts = value),
+
+            new ToggleOption("option.no_more_popups.settings.disable_resource_pack_warnings",
+                () -> ModConfig.INSTANCE.disableResourcePackWarnings,
+                value -> ModConfig.INSTANCE.disableResourcePackWarnings = value)
         );
 
         for (ToggleOption option : toggleOptions) {
