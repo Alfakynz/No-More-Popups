@@ -12,8 +12,7 @@
 
 ## 🔄 Versions
 
-- 1.21.1 and higher
-- Support for older versions is planned.
+- 1.20 and higher
 
 ## 📦 Installation
 
@@ -45,3 +44,4 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 - Remove advancements messages in chat
 - Remove experimental world warning
+- Remove multiplayer warning
