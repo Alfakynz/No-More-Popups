@@ -45,3 +45,6 @@ If you have any questions, feel free to join the [Discord server](https://discor
 - Remove advancements messages in chat
 - Remove experimental world warning
 - Remove multiplayer warning
+
+## 📦 Modpack
+Feel free to include No More Pop-ups in modpacks.
