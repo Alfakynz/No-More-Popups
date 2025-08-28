@@ -8,6 +8,7 @@
 - Remove Tutorial pop-ups
 - Remove Advancement pop-ups
 - Remove resource pack warning
+- Remove multiplayer warning
 - Settings to configure which pop-ups appear
 
 ## 🔄 Versions
@@ -44,7 +45,7 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 - Remove advancements messages in chat
 - Remove experimental world warning
-- Remove multiplayer warning
 
 ## 📦 Modpack
+
 Feel free to include No More Pop-ups in modpacks.

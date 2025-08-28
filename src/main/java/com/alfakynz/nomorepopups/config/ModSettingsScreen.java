@@ -37,7 +37,18 @@ public class ModSettingsScreen extends Screen {
 
             new ToggleOption("option.no_more_popups.settings.disable_resource_pack_warnings",
                 () -> ModConfig.INSTANCE.disableResourcePackWarnings,
-                value -> ModConfig.INSTANCE.disableResourcePackWarnings = value)
+                value -> ModConfig.INSTANCE.disableResourcePackWarnings = value),
+            new ToggleOption("option.no_more_popups.settings.disable_multiplayer_warning",
+                () -> ModConfig.INSTANCE.disableMultiplayerWarning,
+                value -> {
+                    ModConfig.INSTANCE.disableMultiplayerWarning = value;
+                    if (value) {
+                        this.client.options.skipMultiplayerWarning = true;
+                    } else {
+                        this.client.options.skipMultiplayerWarning = false;
+                    }
+                    this.client.options.write();
+                })
         );
 
         for (ToggleOption option : toggleOptions) {

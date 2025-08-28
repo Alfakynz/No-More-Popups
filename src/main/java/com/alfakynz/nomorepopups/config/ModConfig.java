@@ -13,6 +13,7 @@ public class ModConfig {
     public boolean disableTutorialToasts = true;
     public boolean disableAdvancementToasts = true;
     public boolean disableResourcePackWarnings = true;
+    public boolean disableMultiplayerWarning = true;
 
     public static ModConfig INSTANCE = new ModConfig();
 

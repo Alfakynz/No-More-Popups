@@ -3,6 +3,7 @@ package com.alfakynz.nomorepopups.config;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
@@ -24,7 +25,16 @@ public class ModConfigScreen {
             new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue),
             new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue),
             new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue),
-            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue)
+            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue),
+            new Setting("disable_multiplayer_warning", () -> ModConfig.INSTANCE.disableMultiplayerWarning, newValue -> {
+                ModConfig.INSTANCE.disableMultiplayerWarning = newValue;
+                if (newValue) {
+                    MinecraftClient.getInstance().options.skipMultiplayerWarning = true;
+                } else {
+                    MinecraftClient.getInstance().options.skipMultiplayerWarning = false;
+                }
+                MinecraftClient.getInstance().options.write();
+            })
         };
 
         for (Setting setting : settings) {
