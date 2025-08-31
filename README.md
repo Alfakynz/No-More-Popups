@@ -10,12 +10,13 @@
 - Remove resource pack warning
 - Remove multiplayer warning
 - Remove experimental world warning
+- Remove advancements messages in chat (disabled by default)
 - Settings to configure which pop-ups appear
 
 ## 🔄 Versions and Modloader
 
-- 1.20 and higher
-- Fabric
+- Minecraft 1.20 and higher
+- Fabric 0.16.4 and higher
 
 ## 📦 Installation
 
@@ -45,7 +46,7 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Remove advancements messages in chat
+- Nothing for now
 
 ## 📦 Modpack
 

@@ -1,5 +1,6 @@
 {
   "option.no_more_popups.settings": "Opciones de No More Pop-ups",
+  "option.no_more_popups.settings.disable_advancements_messages": "Desactivar mensajes de logros",
   "option.no_more_popups.settings.disable_advancement_toasts": "Desactivar logros",
   "option.no_more_popups.settings.disable_experimental_warning": "Desactivar advertencia experimental",
   "option.no_more_popups.settings.disable_multiplayer_warning": "Desactivar advertencia multijugador",

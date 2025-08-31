@@ -23,6 +23,9 @@ public class ModSettingsScreen extends Screen {
         int y = this.height / 3;
 
         List<ToggleOption> toggleOptions = List.of(
+            new ToggleOption("option.no_more_popups.settings.disable_advancements_messages",
+                () -> ModConfig.INSTANCE.disableAdvancementsMessages,
+                value -> ModConfig.INSTANCE.disableAdvancementsMessages = value),
             new ToggleOption("option.no_more_popups.settings.disable_advancement_toasts",
                 () -> ModConfig.INSTANCE.disableAdvancementToasts,
                 value -> ModConfig.INSTANCE.disableAdvancementToasts = value),

@@ -1,5 +1,6 @@
 {
   "option.no_more_popups.settings": "No More Pop-ups Options",
+  "option.no_more_popups.settings.disable_advancements_messages": "Disable Advancements Messages",
   "option.no_more_popups.settings.disable_advancement_toasts": "Disable Advancement Toasts",
   "option.no_more_popups.settings.disable_experimental_warning": "Disable Experimental Warning",
   "option.no_more_popups.settings.disable_multiplayer_warning": "Disable Multiplayer Warning",

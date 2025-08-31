@@ -22,6 +22,7 @@ public class ModConfigScreen {
         record Setting(String key, BooleanSupplier getter, Consumer<Boolean> setter) {}
 
         Setting[] settings = new Setting[] {
+            new Setting("disable_advancements_messages", () -> ModConfig.INSTANCE.disableAdvancementsMessages, newValue -> ModConfig.INSTANCE.disableAdvancementsMessages = newValue),
             new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue),
             new Setting("disable_experimental_warning", () -> ModConfig.INSTANCE.disableExperimentalWarning, newValue -> ModConfig.INSTANCE.disableExperimentalWarning = newValue),
             new Setting("disable_multiplayer_warning", () -> ModConfig.INSTANCE.disableMultiplayerWarning, newValue -> {

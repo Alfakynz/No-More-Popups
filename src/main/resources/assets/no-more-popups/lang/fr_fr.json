@@ -1,5 +1,6 @@
 {
   "option.no_more_popups.settings": "Options de No More Pop-ups",
+  "option.no_more_popups.settings.disable_advancements_messages": "Désactiver les Messages d'Avancements",
   "option.no_more_popups.settings.disable_advancement_toasts": "Désactiver les Avancements",
   "option.no_more_popups.settings.disable_experimental_warning": "Désactiver l'Avertissement Expérimental",
   "option.no_more_popups.settings.disable_multiplayer_warning": "Désactiver l'Avertissement Multijoueur",

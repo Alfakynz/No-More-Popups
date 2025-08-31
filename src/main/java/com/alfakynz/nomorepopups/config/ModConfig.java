@@ -9,6 +9,7 @@ public class ModConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final File CONFIG_FILE = new File("config/no-more-popups.json");
 
+    public boolean disableAdvancementsMessages = false;
     public boolean disableAdvancementToasts = true;
     public boolean disableExperimentalWarning = true;
     public boolean disableMultiplayerWarning = true;

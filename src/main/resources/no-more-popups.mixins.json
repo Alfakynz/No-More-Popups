@@ -6,7 +6,8 @@
     "ToastManagerMixin",
     "ResourcePackMixin",
     "MultiplayerMixin",
-    "ExperimentalMixin"
+    "ExperimentalMixin",
+    "AdvancementMixin"
   ],
   "injectors": {
     "defaultRequire": 1
