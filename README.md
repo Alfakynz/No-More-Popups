@@ -9,11 +9,13 @@
 - Remove Advancement pop-ups
 - Remove resource pack warning
 - Remove multiplayer warning
+- Remove experimental world warning
 - Settings to configure which pop-ups appear
 
-## 🔄 Versions
+## 🔄 Versions and Modloader
 
 - 1.20 and higher
+- Fabric
 
 ## 📦 Installation
 
@@ -44,8 +46,15 @@ If you have any questions, feel free to join the [Discord server](https://discor
 ## 🚀 Planned Features
 
 - Remove advancements messages in chat
-- Remove experimental world warning
 
 ## 📦 Modpack
 
 Feel free to include No More Pop-ups in modpacks.
+
+## 🌐 Looking for a server? Support me at the same time!
+
+Want to play with friends? Get your own server with [Wabbanode](https://wabbanode.com).
+
+Use the code **WILDLIGHT** to support me and get 25% off.
+
+[![Wabbanode server](https://i.postimg.cc/hvk4z0Vv/banner-3.png)](http://wabbanode.com/affiliate/wildlight)

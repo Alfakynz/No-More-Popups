@@ -22,10 +22,8 @@ public class ModConfigScreen {
         record Setting(String key, BooleanSupplier getter, Consumer<Boolean> setter) {}
 
         Setting[] settings = new Setting[] {
-            new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue),
-            new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue),
             new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue),
-            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue),
+            new Setting("disable_experimental_warning", () -> ModConfig.INSTANCE.disableExperimentalWarning, newValue -> ModConfig.INSTANCE.disableExperimentalWarning = newValue),
             new Setting("disable_multiplayer_warning", () -> ModConfig.INSTANCE.disableMultiplayerWarning, newValue -> {
                 ModConfig.INSTANCE.disableMultiplayerWarning = newValue;
                 if (newValue) {
@@ -34,7 +32,10 @@ public class ModConfigScreen {
                     MinecraftClient.getInstance().options.skipMultiplayerWarning = false;
                 }
                 MinecraftClient.getInstance().options.write();
-            })
+            }),
+            new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue),
+            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue),
+            new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue)
         };
 
         for (Setting setting : settings) {

@@ -23,21 +23,14 @@ public class ModSettingsScreen extends Screen {
         int y = this.height / 3;
 
         List<ToggleOption> toggleOptions = List.of(
-            new ToggleOption("option.no_more_popups.settings.disable_recipe_toasts",
-                () -> ModConfig.INSTANCE.disableRecipeToasts,
-                value -> ModConfig.INSTANCE.disableRecipeToasts = value),
-
-            new ToggleOption("option.no_more_popups.settings.disable_tutorial_toasts",
-                () -> ModConfig.INSTANCE.disableTutorialToasts,
-                value -> ModConfig.INSTANCE.disableTutorialToasts = value),
-
             new ToggleOption("option.no_more_popups.settings.disable_advancement_toasts",
                 () -> ModConfig.INSTANCE.disableAdvancementToasts,
                 value -> ModConfig.INSTANCE.disableAdvancementToasts = value),
 
-            new ToggleOption("option.no_more_popups.settings.disable_resource_pack_warnings",
-                () -> ModConfig.INSTANCE.disableResourcePackWarnings,
-                value -> ModConfig.INSTANCE.disableResourcePackWarnings = value),
+            new ToggleOption("option.no_more_popups.settings.disable_experimental_warning",
+                () -> ModConfig.INSTANCE.disableExperimentalWarning,
+                value -> ModConfig.INSTANCE.disableExperimentalWarning = value),
+
             new ToggleOption("option.no_more_popups.settings.disable_multiplayer_warning",
                 () -> ModConfig.INSTANCE.disableMultiplayerWarning,
                 value -> {
@@ -48,7 +41,19 @@ public class ModSettingsScreen extends Screen {
                         this.client.options.skipMultiplayerWarning = false;
                     }
                     this.client.options.write();
-                })
+            }),
+
+            new ToggleOption("option.no_more_popups.settings.disable_recipe_toasts",
+                () -> ModConfig.INSTANCE.disableRecipeToasts,
+                value -> ModConfig.INSTANCE.disableRecipeToasts = value),
+
+            new ToggleOption("option.no_more_popups.settings.disable_resource_pack_warnings",
+                () -> ModConfig.INSTANCE.disableResourcePackWarnings,
+                value -> ModConfig.INSTANCE.disableResourcePackWarnings = value),
+
+            new ToggleOption("option.no_more_popups.settings.disable_tutorial_toasts",
+                () -> ModConfig.INSTANCE.disableTutorialToasts,
+                value -> ModConfig.INSTANCE.disableTutorialToasts = value)
         );
 
         for (ToggleOption option : toggleOptions) {

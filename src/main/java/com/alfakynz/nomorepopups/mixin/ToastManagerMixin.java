@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ToastManager.class)
 public class ToastManagerMixin {
+    
     @Inject(method = "add", at = @At("HEAD"), cancellable = true)
     private void blockRecipeToast(Toast toast, CallbackInfo ci) {
         if (toast instanceof RecipeToast && ModConfig.INSTANCE.disableRecipeToasts) {

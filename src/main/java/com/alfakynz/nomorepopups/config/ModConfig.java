@@ -9,11 +9,12 @@ public class ModConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final File CONFIG_FILE = new File("config/no-more-popups.json");
 
-    public boolean disableRecipeToasts = true;
-    public boolean disableTutorialToasts = true;
     public boolean disableAdvancementToasts = true;
-    public boolean disableResourcePackWarnings = true;
+    public boolean disableExperimentalWarning = true;
     public boolean disableMultiplayerWarning = true;
+    public boolean disableRecipeToasts = true;
+    public boolean disableResourcePackWarnings = true;
+    public boolean disableTutorialToasts = true;
 
     public static ModConfig INSTANCE = new ModConfig();
 
