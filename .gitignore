@@ -1,40 +1,32 @@
-# gradle
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-.gradle/
-build/
-out/
-classes/
+node_modules
+.DS_Store
+dist
+dist-ssr
+coverage
+*.local
+.vscode
+package-lock.json
 
-# eclipse
+/cypress/videos/
+/cypress/screenshots/
 
-*.launch
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# idea
-
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# vscode
-
-.settings/
-.vscode/
-bin/
-.classpath
-.project
-
-# macos
-
-*.DS_Store
-
-# fabric
-
-run/
-
-# java
-
-hs_err_*.log
-replay_*.log
-*.hprof
-*.jfr
+*.tsbuildinfo
