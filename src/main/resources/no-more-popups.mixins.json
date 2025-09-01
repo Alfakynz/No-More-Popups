@@ -7,7 +7,8 @@
     "ResourcePackMixin",
     "MultiplayerMixin",
     "ExperimentalMixin",
-    "AdvancementMixin"
+    "AdvancementMixin",
+    "ExperimentalWorldMixin"
   ],
   "injectors": {
     "defaultRequire": 1
