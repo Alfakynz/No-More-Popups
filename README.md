@@ -53,9 +53,11 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-These features aren't really planned, they're just some ideas. When I have time, I might work on these features.
-
 - Make for NeoForge
+- Make for Quilt
+
+This feature isn't really planned, it's just an idea. When I have time, I might work on this feature.
+
 - Remove pop-ups from mods
 
 ## 📦 Modpack
