@@ -15,4 +15,10 @@ public class MultiplayerMixin {
         GameOptions options = (GameOptions) (Object) this;
         options.skipMultiplayerWarning = ModConfig.INSTANCE.disableMultiplayerWarning;
     }
+
+    @Inject(method = "write", at = @At("TAIL"))
+    private void onWrite(CallbackInfo ci) {
+        GameOptions options = (GameOptions) (Object) this;
+        options.skipMultiplayerWarning = ModConfig.INSTANCE.disableMultiplayerWarning;
+    }
 }

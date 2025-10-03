@@ -18,7 +18,7 @@
 - Remove multiplayer warning
 - Remove experimental world warning
 - Remove advancements messages in chat (disabled by default)
-- Settings to configure which pop-ups appear
+- Settings to configure which pop-ups appear (only available with ModMenu Cloth Config)
 
 ## 🔄 Versions and Modloader
 
