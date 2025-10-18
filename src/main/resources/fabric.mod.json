@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "icon": "assets/no-more-popups/icon.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": ["com.alfakynz.nomorepopups.NoMorePopupsClient"],
     "modmenu": ["com.alfakynz.nomorepopups.config.ModMenuIntegration"]
