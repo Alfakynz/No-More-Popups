@@ -19,12 +19,12 @@ public class ModConfigScreen {
 
         var generalCategory = builder.getOrCreateCategory(Text.translatable("option.no_more_popups.settings.general"));
 
-        record Setting(String key, BooleanSupplier getter, Consumer<Boolean> setter) {}
+        record Setting(String key, BooleanSupplier getter, Consumer<Boolean> setter, Boolean default_value) {}
 
         Setting[] settings = new Setting[] {
-            new Setting("disable_advancements_messages", () -> ModConfig.INSTANCE.disableAdvancementsMessages, newValue -> ModConfig.INSTANCE.disableAdvancementsMessages = newValue),
-            new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue),
-            new Setting("disable_experimental_warning", () -> ModConfig.INSTANCE.disableExperimentalWarning, newValue -> ModConfig.INSTANCE.disableExperimentalWarning = newValue),
+            new Setting("disable_advancements_messages", () -> ModConfig.INSTANCE.disableAdvancementsMessages, newValue -> ModConfig.INSTANCE.disableAdvancementsMessages = newValue, false),
+            new Setting("disable_advancement_toasts", () -> ModConfig.INSTANCE.disableAdvancementToasts, newValue -> ModConfig.INSTANCE.disableAdvancementToasts = newValue, true),
+            new Setting("disable_experimental_warning", () -> ModConfig.INSTANCE.disableExperimentalWarning, newValue -> ModConfig.INSTANCE.disableExperimentalWarning = newValue, true),
             new Setting("disable_multiplayer_warning", () -> ModConfig.INSTANCE.disableMultiplayerWarning, newValue -> {
                 ModConfig.INSTANCE.disableMultiplayerWarning = newValue;
                 if (newValue) {
@@ -33,20 +33,21 @@ public class ModConfigScreen {
                     MinecraftClient.getInstance().options.skipMultiplayerWarning = false;
                 }
                 MinecraftClient.getInstance().options.write();
-            }),
-            new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue),
-            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue),
-            new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue)
+            }, true),
+            new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue, true),
+            new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue, true),
+            new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue, true)
         };
 
         for (Setting setting : settings) {
             String key = setting.key();
             BooleanSupplier getter = setting.getter();
             Consumer<Boolean> setter = setting.setter();
+            Boolean default_value = setting.default_value();
 
             generalCategory.addEntry(entryBuilder
                 .startBooleanToggle(Text.translatable("option.no_more_popups.settings." + key), getter.getAsBoolean())
-                .setDefaultValue(true)
+                .setDefaultValue(default_value)
                 .setSaveConsumer(setter)
                 .build());
         }
