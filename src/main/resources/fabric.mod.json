@@ -14,7 +14,7 @@
   "icon": "assets/no-more-popups/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": ["com.alfakynz.nomorepopups.NoMorePopupsClient"],
+    "client": ["com.alfakynz.nomorepopups.NoMorePopups"],
     "modmenu": ["com.alfakynz.nomorepopups.config.ModMenuIntegration"]
   },
   "mixins": ["no-more-popups.mixins.json"],

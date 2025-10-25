@@ -1,5 +1,6 @@
 package com.alfakynz.nomorepopups.config;
 
+import com.alfakynz.nomorepopups.NoMorePopups;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -24,7 +25,8 @@ public class ModConfig {
             try (Reader reader = new FileReader(CONFIG_FILE)) {
                 INSTANCE = GSON.fromJson(reader, ModConfig.class);
             } catch (IOException e) {
-                e.printStackTrace();
+                NoMorePopups.LOGGER.error("Failed to load NMP config, using default values.", e);
+                INSTANCE = new ModConfig();
             }
         } else {
             save();
@@ -35,7 +37,7 @@ public class ModConfig {
         try (Writer writer = new FileWriter(CONFIG_FILE)) {
             GSON.toJson(INSTANCE, writer);
         } catch (IOException e) {
-            e.printStackTrace();
+            NoMorePopups.LOGGER.error("Failed to save NMP config.", e);
         }
     }
 }

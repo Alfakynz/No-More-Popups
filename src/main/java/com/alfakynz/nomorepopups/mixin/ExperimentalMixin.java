@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 @Mixin(WorldOpenFlows.class)
 public class ExperimentalMixin {
     
-    @ModifyVariable(method = "confirmWorldCreation", at = @At("HEAD"))
+    @ModifyVariable(method = "confirmWorldCreation", at = @At("HEAD"), argsOnly = true)
     private static boolean removeExperimentalWarning(boolean original) {
         return ModConfig.INSTANCE.disableExperimentalWarning || original;
     }
