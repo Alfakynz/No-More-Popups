@@ -2,12 +2,12 @@
 
 ![Banner](icons/banner.png)
 
-![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)
+[![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)](https://fabricmc.net/)
 [![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_64h.png)](https://github.com/Alfakynz/No-More-Popups)
 [![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)](https://modrinth.com/project/sAdB6HVW)
 [![curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_64h.png)](https://www.curseforge.com/minecraft/mc-mods/no-more-popups)
 [![discord-plural](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_64h.png)](https://discord.gg/TcmUQHZ5U4)
-![fabric-api](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_64h.png)
+[![fabric-api](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_64h.png)](https://modrinth.com/mod/fabric-api)
 
 ## ✨ Features
 
@@ -53,11 +53,10 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Make for NeoForge
-- Make for Quilt
-
 This feature isn't really planned, it's just an idea. When I have time, I might work on this feature.
 
+- Make for NeoForge
+- Make for Quilt
 - Remove pop-ups from mods
 
 ## 📦 Modpack

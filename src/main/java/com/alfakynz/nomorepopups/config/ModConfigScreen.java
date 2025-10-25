@@ -2,9 +2,9 @@ package com.alfakynz.nomorepopups.config;
 
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.Minecraft;
+import net.minecraft.network.chat.Component;
 import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 
@@ -12,12 +12,12 @@ public class ModConfigScreen {
     public static Screen create(Screen parent) {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Text.translatable("option.no_more_popups.settings"))
+                .setTitle(Component.translatable("option.no_more_popups.settings"))
                 .setSavingRunnable(ModConfig::save);
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-        var generalCategory = builder.getOrCreateCategory(Text.translatable("option.no_more_popups.settings.general"));
+        var generalCategory = builder.getOrCreateCategory(Component.translatable("option.no_more_popups.settings.general"));
 
         record Setting(String key, BooleanSupplier getter, Consumer<Boolean> setter, Boolean default_value) {}
 
@@ -27,12 +27,8 @@ public class ModConfigScreen {
             new Setting("disable_experimental_warning", () -> ModConfig.INSTANCE.disableExperimentalWarning, newValue -> ModConfig.INSTANCE.disableExperimentalWarning = newValue, true),
             new Setting("disable_multiplayer_warning", () -> ModConfig.INSTANCE.disableMultiplayerWarning, newValue -> {
                 ModConfig.INSTANCE.disableMultiplayerWarning = newValue;
-                if (newValue) {
-                    MinecraftClient.getInstance().options.skipMultiplayerWarning = true;
-                } else {
-                    MinecraftClient.getInstance().options.skipMultiplayerWarning = false;
-                }
-                MinecraftClient.getInstance().options.write();
+                Minecraft.getInstance().options.skipMultiplayerWarning = newValue;
+                Minecraft.getInstance().options.save();
             }, true),
             new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue, true),
             new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue, true),
@@ -46,7 +42,7 @@ public class ModConfigScreen {
             Boolean default_value = setting.default_value();
 
             generalCategory.addEntry(entryBuilder
-                .startBooleanToggle(Text.translatable("option.no_more_popups.settings." + key), getter.getAsBoolean())
+                .startBooleanToggle(Component.translatable("option.no_more_popups.settings." + key), getter.getAsBoolean())
                 .setDefaultValue(default_value)
                 .setSaveConsumer(setter)
                 .build());
