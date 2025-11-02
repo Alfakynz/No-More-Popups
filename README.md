@@ -3,11 +3,14 @@
 ![Banner](icons/banner.png)
 
 [![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_64h.png)](https://fabricmc.net/)
+[![quilt](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/quilt_64h.png)](https://quiltmc.org/)
+[![forge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/forge_64h.png)](https://files.minecraftforge.net/net/minecraftforge/forge/)
+[![neoforge](https://raw.githubusercontent.com/intergrav/devins-badges/8494ec1ac495cfb481dc7e458356325510933eb0/assets/cozy/supported/neoforge_64h.png)](https://neoforged.net/)
+
 [![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_64h.png)](https://github.com/Alfakynz/No-More-Popups)
 [![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_64h.png)](https://modrinth.com/project/sAdB6HVW)
 [![curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_64h.png)](https://www.curseforge.com/minecraft/mc-mods/no-more-popups)
 [![discord-plural](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_64h.png)](https://discord.gg/TcmUQHZ5U4)
-[![fabric-api](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_64h.png)](https://modrinth.com/mod/fabric-api)
 
 ## ✨ Features
 
@@ -20,25 +23,25 @@
 - Remove advancements messages in chat (disabled by default)
 - Settings to configure which pop-ups appear (only available with ModMenu Cloth Config)
 
-## 🔄 Versions and Modloader
+## 🔄 Versions
 
-- Minecraft 1.20 and higher
-- Fabric 0.16.4 and higher
+| Minecraft | Fabric | Forge | NeoForge | Quilt |
+|-----------|--------|-------|----------|-------|
+| 1.20.1    | ✅      | ✅     | ✅        | ✅     |
+| 1.20.2    | ✅      | ✅     | ❌        | ✅     |
+| 1.20.3    | ✅      | ✅     | ❌        | ✅     |
+| 1.20.4    | ✅      | ✅     | ❌        | ✅     |
+| 1.20.5    | ✅      | ❌     | ❌        | ✅     |
+| 1.20.6    | ✅      | ❌     | ❌        | ✅     |
+| 1.21.x    | ✅      | ❌     | ❌        | ✅     |
+
+Fabric: 0.16.4 minimum <br>
+Forge: 47.1.47 minimum
 
 ## 📦 Installation
 
-### 👤 For users
-
 1. Search and download No More Pop-ups from [Modrinth](https://modrinth.com/project/sAdB6HVW) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-more-popups)
 2. Move the downloaded file into your mods folder
-
-### 👨‍💻 For dev
-
-1. Clone the repo: `git clone https://github.com/Alfakynz/No-More-Popups.git`
-2. Install [java](https://java.com)
-3. Navigate to the project directory: `cd No-More-Popups`
-4. Build the project with: `./gradlew build`
-5. The built files will be located in `build/libs/`
 
 ## 🤝 Contributing
 
@@ -53,10 +56,10 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
+- Compatible with other Minecraft versions (Neo/Forge)
+
 This feature isn't really planned, it's just an idea. When I have time, I might work on this feature.
 
-- Make for NeoForge
-- Make for Quilt
 - Remove pop-ups from mods
 
 ## 📦 Modpack
