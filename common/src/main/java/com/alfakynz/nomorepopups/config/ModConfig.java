@@ -8,7 +8,7 @@ import java.io.*;
 
 public class ModConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final File CONFIG_FILE = new File("config/no-more-popups.json");
+    private static final File CONFIG_FILE = new File("config/nomorepopups.json");
 
     public boolean disableAdvancementsMessages = false;
     public boolean disableAdvancementToasts = true;
@@ -34,8 +34,16 @@ public class ModConfig {
     }
 
     public static void save() {
-        try (Writer writer = new FileWriter(CONFIG_FILE)) {
-            GSON.toJson(INSTANCE, writer);
+        try {
+            // Crée le dossier si besoin
+            File parent = CONFIG_FILE.getParentFile();
+            if (parent != null && !parent.exists()) {
+                parent.mkdirs();
+            }
+
+            try (Writer writer = new FileWriter(CONFIG_FILE)) {
+                GSON.toJson(INSTANCE, writer);
+            }
         } catch (IOException e) {
             Constants.LOG.error("Failed to save NMP config.", e);
         }
