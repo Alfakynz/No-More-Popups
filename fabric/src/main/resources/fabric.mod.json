@@ -15,9 +15,8 @@
     "icon": "assets/${mod_id}/icon.png",
     "environment": "*",
     "entrypoints": {
-        "main": [
-            "com.alfakynz.nomorepopups.ExampleMod"
-        ]
+        "main": ["com.alfakynz.nomorepopups.NoMorePopupsFabric"],
+        "modmenu": ["com.alfakynz.nomorepopups.config.ModMenuIntegration"]
     },
     "mixins": [
         "${mod_id}.mixins.json",
@@ -29,7 +28,16 @@
         "java": ">=17"
     },
     "suggests": {
-        "fabric": "*"
+        "fabric": "*",
+        "modmenu": "*",
+        "cloth-config": "*"
+    },
+    "custom": {
+      "modmenu": {
+        "links": {
+          "modmenu.discord": "https://discord.gg/TcmUQHZ5U4"
+        }
+      }
     }
 }
   
