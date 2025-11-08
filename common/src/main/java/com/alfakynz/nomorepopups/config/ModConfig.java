@@ -35,10 +35,12 @@ public class ModConfig {
 
     public static void save() {
         try {
-            // Crée le dossier si besoin
+            // Create the config dir if needed
             File parent = CONFIG_FILE.getParentFile();
             if (parent != null && !parent.exists()) {
-                parent.mkdirs();
+                if (!parent.mkdirs()) {
+                    Constants.LOG.warn("Failed to create config directory: {}", parent.getAbsolutePath());
+                }
             }
 
             try (Writer writer = new FileWriter(CONFIG_FILE)) {
