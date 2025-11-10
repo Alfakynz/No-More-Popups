@@ -15,37 +15,37 @@
 ## ✨ Features
 
 - Removes _"New Recipe Unlocked!"_ pop-ups
-- Remove Tutorial pop-ups
-- Remove Advancement pop-ups
-- Remove resource pack warning
-- Remove multiplayer warning
-- Remove experimental world warning
-- Remove advancements messages in chat (disabled by default)
-- Settings to configure which pop-ups appear (only available with ModMenu Cloth Config)
+- Removes Tutorial pop-ups
+- Removes Advancement pop-ups
+- Removes resource pack warning
+- Removes multiplayer warning
+- Removes experimental world warning
+- Removes advancements messages in chat (disabled by default)
+- Includes settingsto configure which pop-ups appear (available with [ModMenu](https://modrinth.com/mod/modmenu) and [Cloth Config API](https://modrinth.com/mod/cloth-config))
 
 ## 🔄 Versions
 
 | Minecraft | Fabric | Forge | NeoForge | Quilt |
-|-----------|--------|-------|----------|-------|
-| 1.20.1    | ✅      | ✅     | ✅        | ✅     |
-| 1.20.2    | ✅      | ✅     | ❌        | ✅     |
-| 1.20.3    | ✅      | ✅     | ❌        | ✅     |
-| 1.20.4    | ✅      | ✅     | ❌        | ✅     |
-| 1.20.5    | ✅      | ❌     | ❌        | ✅     |
-| 1.20.6    | ✅      | ❌     | ❌        | ✅     |
-| 1.21.x    | ✅      | ❌     | ❌        | ✅     |
+| --------- | ------ | ----- | -------- | ----- |
+| 1.20.1    | ✅     | ✅    | ✅       | ✅    |
+| 1.20.2    | ✅     | ✅    | ❌       | ✅    |
+| 1.20.3    | ✅     | ✅    | ❌       | ✅    |
+| 1.20.4    | ✅     | ✅    | ❌       | ✅    |
+| 1.20.5    | ✅     | ❌    | ❌       | ✅    |
+| 1.20.6    | ✅     | ❌    | ❌       | ✅    |
+| 1.21.x    | ✅     | ❌    | ❌       | ✅    |
 
-Fabric: 0.16.4 minimum <br>
-Forge: 47.1.47 minimum
+Fabric >= 0.16.4 <br />
+Forge >= 47.1.47
 
-## 📦 Installation
+# ⬇️ Installation
 
-1. Search and download No More Pop-ups from [Modrinth](https://modrinth.com/project/sAdB6HVW) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-more-popups)
-2. Move the downloaded file into your mods folder
+1. Download the mod from [Modrinth](https://modrinth.com/project/sAdB6HVW) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/no-more-popups)
+2. Place it into your `mods` directory
 
 ## 🤝 Contributing
 
-No-More-Popups is a work in progress, so all suggestions are welcome.
+No More Pop-ups is a work in progress, so all suggestions are welcome.
 
 If you'd like to contribute:
 
@@ -56,11 +56,8 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Compatible with other Minecraft versions (Neo/Forge)
-
-This feature isn't really planned, it's just an idea. When I have time, I might work on this feature.
-
-- Remove pop-ups from mods
+- Compatibility with other Minecraft versions (for Neo/Forge)
+- Removal of pop-ups added by other mods
 
 ## 📦 Modpack
 
@@ -68,7 +65,7 @@ Feel free to include No More Pop-ups in modpacks.
 
 ## 🌐 Looking for a server? Support me at the same time!
 
-Want to play with friends? Get your own server with [Wabbanode](https://wabbanode.com).
+Want to play with friends? Get your own server with [Wabbanode](http://wabbanode.com/affiliate/wildlight).
 
 Use the code **WILDLIGHT** to support me and get 25% off.
 

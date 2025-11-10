@@ -1,0 +1,93 @@
+name: "🐛 Bug Report"
+description: Report a problem or unexpected behavior in No More Pop-ups
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐞 Bug Report
+        Thanks for taking the time to help improve No More Pop-ups!
+        Please fill out the following information to help us reproduce and fix the issue.
+
+  - type: dropdown
+    id: modloader
+    attributes:
+      label: "Which modloader has the issue?"
+      description: Select the modloader where the bug occurs with No More Pop-ups.
+      options:
+        - "Fabric / Quilt"
+        - "NeoForge / Forge"
+        - "All"
+    validations:
+      required: true
+
+  - type: input
+    id: modloaderversion
+    attributes:
+      label: "Modloader Version"
+      description: Which version of your modloader are you using?
+      placeholder: "e.g. v0.16.4"
+    validations:
+      required: true
+
+  - type: input
+    id: mcversion
+    attributes:
+      label: "Minecraft Version"
+      description: Which version of Minecraft are you using?
+      placeholder: "e.g. v1.21.1"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "No More Pop-ups Version"
+      description: Which version of No More Pop-ups are you using?
+      placeholder: "e.g. v2.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Describe the bug"
+      description: What happened, and what did you expect to happen?
+      placeholder: "Explain clearly what the bug is."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to reproduce"
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Go to ...
+        2. Do ...
+        3. See the error
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Crash report or logs"
+      description: Paste the relevant part of your `latest.log` or crash report (if applicable).
+      placeholder: "Attach logs here or link to a Pastebin/Gist."
+      render: shell
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I'm using the latest version of No More Pop-ups."
+          required: true
+        - label: "I've checked existing issues to avoid duplicates."
+          required: true
+        - label: "I've provided all the necessary information."
+          required: true
+        - label: "I've attached logs or crash reports if available."
+          required: false
