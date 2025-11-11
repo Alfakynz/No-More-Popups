@@ -11,6 +11,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/**
+ * Mixin for removing toasts (including Recipe, Tutorial and Advancement)
+ */
 @Mixin(ToastComponent.class)
 public class ToastManagerMixin {
 

@@ -6,6 +6,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
+/**
+ * Mixin for removing the experimental world warning when creating an experimental world
+ */
 @Mixin(WorldOpenFlows.class)
 public class ExperimentalMixin {
     

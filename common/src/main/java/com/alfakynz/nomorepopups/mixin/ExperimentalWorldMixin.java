@@ -8,6 +8,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * Mixin for removing the experimental world warning when launching an experimental world
+ */
 @Mixin(PrimaryLevelData.class)
 public class ExperimentalWorldMixin {
 
