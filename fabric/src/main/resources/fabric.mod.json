@@ -8,8 +8,9 @@
         "${mod_author}"
     ],
     "contact": {
-        "homepage": "https://fabricmc.net/",
-        "sources": "https://github.com/FabricMC/fabric-example-mod"
+        "homepage": "https://github.com/Alfakynz/No-More-Popups",
+        "sources": "https://github.com/Alfakynz/No-More-Popups",
+        "issues": "https://github.com/Alfakynz/No-More-Popups/issues"
     },
     "license": "${license}",
     "icon": "assets/${mod_id}/icon.png",
@@ -35,9 +36,9 @@
     "custom": {
       "modmenu": {
         "links": {
-          "modmenu.discord": "https://discord.gg/TcmUQHZ5U4"
+          "modmenu.discord": "https://discord.gg/TcmUQHZ5U4",
+          "modmenu.wiki": "https://github.com/Alfakynz/No-More-Popups/wiki"
         }
       }
     }
 }
-  
