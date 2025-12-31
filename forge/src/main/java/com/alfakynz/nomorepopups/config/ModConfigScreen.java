@@ -14,9 +14,7 @@ import java.util.function.Consumer;
 public class ModConfigScreen {
 
     public static void registerModsPage() {
-        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> {
-            return create(parent);
-        }));
+        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> create(parent)));
     }
 
     public static Screen create(Screen parent) {
@@ -42,6 +40,7 @@ public class ModConfigScreen {
                 }, true),
                 new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue, true),
                 new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue, true),
+                new Setting("disable_system_toasts", () -> ModConfig.INSTANCE.disableSystemToasts, newValue -> ModConfig.INSTANCE.disableSystemToasts = newValue, false),
                 new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue, true)
         };
 

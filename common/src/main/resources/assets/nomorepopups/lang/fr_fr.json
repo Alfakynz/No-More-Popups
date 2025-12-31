@@ -6,6 +6,7 @@
   "option.no_more_popups.settings.disable_multiplayer_warning": "Désactiver l'Avertissement Multijoueur",
   "option.no_more_popups.settings.disable_recipe_toasts": "Désactiver les Nouvelles Recettes",
   "option.no_more_popups.settings.disable_resource_pack_warnings": "Désactiver les Packs de Ressources",
+  "option.no_more_popups.settings.disable_system_toasts": "Désactiver les pop-ups du Système",
   "option.no_more_popups.settings.disable_tutorial_toasts": "Désactiver les Tutoriels",
   "option.no_more_popups.settings.done": "Terminé",
   "option.no_more_popups.settings.general": "Général",

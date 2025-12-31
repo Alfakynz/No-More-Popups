@@ -16,6 +16,7 @@ public class ModConfig {
     public boolean disableMultiplayerWarning = true;
     public boolean disableRecipeToasts = true;
     public boolean disableResourcePackWarnings = true;
+    public boolean disableSystemToasts = false;
     public boolean disableTutorialToasts = true;
 
     public static ModConfig INSTANCE = new ModConfig();

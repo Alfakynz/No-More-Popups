@@ -17,11 +17,12 @@
 - Removes _"New Recipe Unlocked!"_ pop-ups
 - Removes Tutorial pop-ups
 - Removes Advancement pop-ups
+- Removes System pop-ups
 - Removes resource pack warning
 - Removes multiplayer warning
 - Removes experimental world warning
 - Removes advancements messages in chat (disabled by default)
-- Includes settingsto configure which pop-ups appear (available with [ModMenu](https://modrinth.com/mod/modmenu) and [Cloth Config API](https://modrinth.com/mod/cloth-config))
+- Includes settings to configure which pop-ups appear (available with [ModMenu](https://modrinth.com/mod/modmenu) and [Cloth Config API](https://modrinth.com/mod/cloth-config))
 
 ## 🔄 Versions
 

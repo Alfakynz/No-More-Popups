@@ -32,6 +32,7 @@ public class ModConfigScreen {
                 }, true),
                 new Setting("disable_recipe_toasts", () -> ModConfig.INSTANCE.disableRecipeToasts, newValue -> ModConfig.INSTANCE.disableRecipeToasts = newValue, true),
                 new Setting("disable_resource_pack_warnings", () -> ModConfig.INSTANCE.disableResourcePackWarnings, newValue -> ModConfig.INSTANCE.disableResourcePackWarnings = newValue, true),
+                new Setting("disable_system_toasts", () -> ModConfig.INSTANCE.disableSystemToasts, newValue -> ModConfig.INSTANCE.disableSystemToasts = newValue, false),
                 new Setting("disable_tutorial_toasts", () -> ModConfig.INSTANCE.disableTutorialToasts, newValue -> ModConfig.INSTANCE.disableTutorialToasts = newValue, true)
         };
 
