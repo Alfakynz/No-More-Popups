@@ -1,4 +1,5 @@
 {
+  "modmenu.descriptionTranslation.no-more-popups": "Removes in-game pop-ups (New Recipe Unlocked and more)",
   "option.no_more_popups.settings": "No More Pop-ups Options",
   "option.no_more_popups.settings.disable_advancements_messages": "Disable Advancements Messages",
   "option.no_more_popups.settings.disable_advancement_toasts": "Disable Advancement Toasts",
@@ -11,6 +12,5 @@
   "option.no_more_popups.settings.done": "Done",
   "option.no_more_popups.settings.general": "General",
   "option.no_more_popups.settings.no": "No",
-  "option.no_more_popups.settings.yes": "Yes",
-  "modmenu.descriptionTranslation.no-more-popups": "Removes in-game pop-ups (New Recipe Unlocked and more)"
+  "option.no_more_popups.settings.yes": "Yes"
 }

@@ -1,16 +1,16 @@
 {
+  "modmenu.descriptionTranslation.no-more-popups": "Supprime les pop-ups en jeu (\"Nouvelle(s) Recette(s)\" et plus)",
   "option.no_more_popups.settings": "Options de No More Pop-ups",
-  "option.no_more_popups.settings.disable_advancements_messages": "Désactiver les Messages d'Avancements",
-  "option.no_more_popups.settings.disable_advancement_toasts": "Désactiver les Avancements",
-  "option.no_more_popups.settings.disable_experimental_warning": "Désactiver l'Avertissement Expérimental",
-  "option.no_more_popups.settings.disable_multiplayer_warning": "Désactiver l'Avertissement Multijoueur",
-  "option.no_more_popups.settings.disable_recipe_toasts": "Désactiver les Nouvelles Recettes",
-  "option.no_more_popups.settings.disable_resource_pack_warnings": "Désactiver les Packs de Ressources",
-  "option.no_more_popups.settings.disable_system_toasts": "Désactiver les pop-ups du Système",
-  "option.no_more_popups.settings.disable_tutorial_toasts": "Désactiver les Tutoriels",
+  "option.no_more_popups.settings.disable_advancements_messages": "Désactiver les messages d'avancements",
+  "option.no_more_popups.settings.disable_advancement_toasts": "Désactiver les pop-ups d'avancements",
+  "option.no_more_popups.settings.disable_experimental_warning": "Désactiver l'avertissement expérimental",
+  "option.no_more_popups.settings.disable_multiplayer_warning": "Désactiver l'avertissement multijoueur",
+  "option.no_more_popups.settings.disable_recipe_toasts": "Désactiver les pop-ups des nouvelles recettes",
+  "option.no_more_popups.settings.disable_resource_pack_warnings": "Désactiver l'avertissement des packs de ressources",
+  "option.no_more_popups.settings.disable_system_toasts": "Désactiver les pop-ups du système",
+  "option.no_more_popups.settings.disable_tutorial_toasts": "Désactiver le tutoriel",
   "option.no_more_popups.settings.done": "Terminé",
   "option.no_more_popups.settings.general": "Général",
   "option.no_more_popups.settings.no": "Non",
-  "option.no_more_popups.settings.yes": "Oui",
-  "modmenu.descriptionTranslation.no-more-popups": "Supprime les pop-ups en jeu (\"Nouvelle(s) Recette(s)\" and more)"
+  "option.no_more_popups.settings.yes": "Oui"
 }
