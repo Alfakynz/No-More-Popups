@@ -11,6 +11,7 @@
       "MultiplayerMixin",
       "ResourcePackMixin",
       "ToastManagerMixin",
+      "accessor.SystemToastAccessor",
       "compat.ModdedMessageMixin"
     ],
     "injectors": {

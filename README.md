@@ -24,7 +24,7 @@
 - Removes advancements messages in chat (disabled by default)
 - Includes settings to configure which pop-ups appear (available with [ModMenu](https://modrinth.com/mod/modmenu) and [Cloth Config API](https://modrinth.com/mod/cloth-config))
 - Removes some pop-ups or messages from mods:
-  - [FastQuit](https://modrinth.com/project/x1hIzbuY) (not yet configurable)
+  - [FastQuit](https://modrinth.com/project/x1hIzbuY)
   - [Nether Weather](https://modrinth.com/project/XrxtjryC)
 
 ## 🔄 Versions
