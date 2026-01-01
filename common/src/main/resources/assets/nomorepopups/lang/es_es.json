@@ -6,7 +6,7 @@
   "option.no_more_popups.config.general.advancements.toasts": "Desactivar las ventanas emergentes de logros",
   "option.no_more_popups.config.general.experimental_warning": "Desactivar la advertencia experimental",
   "option.no_more_popups.config.general.multiplayer_warning": "Desactivar la advertencia multijugador",
-  "option.no_more_popups.config.general.recipes.toasts": "Desactivar las ventanas emergentes recetas",
+  "option.no_more_popups.config.general.recipes_toasts": "Desactivar las ventanas emergentes recetas",
   "option.no_more_popups.config.general.resource_pack_warnings": "Desactivar la advertencia de los paquetes de recursos",
   "option.no_more_popups.config.general.system_toasts": "Desactivar las ventanas emergentes del sistema",
   "option.no_more_popups.config.general.tutorials": "Desactivar el tutorial",

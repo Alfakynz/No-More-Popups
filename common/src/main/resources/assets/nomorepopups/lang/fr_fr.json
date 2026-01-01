@@ -6,7 +6,7 @@
   "option.no_more_popups.config.general.advancements.toasts": "Désactiver les pop-ups d'avancements",
   "option.no_more_popups.config.general.experimental_warning": "Désactiver l'avertissement expérimental",
   "option.no_more_popups.config.general.multiplayer_warning": "Désactiver l'avertissement multijoueur",
-  "option.no_more_popups.config.general.recipes.toasts": "Désactiver les pop-ups des nouvelles recettes",
+  "option.no_more_popups.config.general.recipes_toasts": "Désactiver les pop-ups des nouvelles recettes",
   "option.no_more_popups.config.general.resource_pack_warnings": "Désactiver l'avertissement des packs de ressources",
   "option.no_more_popups.config.general.system_toasts": "Désactiver les pop-ups du système",
   "option.no_more_popups.config.general.tutorials": "Désactiver le tutoriel",

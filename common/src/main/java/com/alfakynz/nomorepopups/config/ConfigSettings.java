@@ -26,24 +26,6 @@ public final class ConfigSettings {
                     true
             ),
             new Setting(
-                    "recipes.toasts",
-                    () -> ModConfig.general("recipes.toasts"),
-                    v -> ModConfig.INSTANCE.general.put("recipes.toasts", v),
-                    true
-            ),
-            new Setting(
-                    "tutorials",
-                    () -> ModConfig.general("tutorials"),
-                    v -> ModConfig.INSTANCE.general.put("tutorials", v),
-                    true
-            ),
-            new Setting(
-                    "system_toasts",
-                    () -> ModConfig.general("system_toasts"),
-                    v -> ModConfig.INSTANCE.general.put("system_toasts", v),
-                    false
-            ),
-            new Setting(
                     "experimental_warning",
                     () -> ModConfig.general("experimental_warning"),
                     v -> ModConfig.INSTANCE.general.put("experimental_warning", v),
@@ -56,9 +38,27 @@ public final class ConfigSettings {
                     true
             ),
             new Setting(
+                    "recipes_toasts",
+                    () -> ModConfig.general("recipes_toasts"),
+                    v -> ModConfig.INSTANCE.general.put("recipes_toasts", v),
+                    true
+            ),
+            new Setting(
                     "resource_pack_warnings",
                     () -> ModConfig.general("resource_pack_warnings"),
                     v -> ModConfig.INSTANCE.general.put("resource_pack_warnings", v),
+                    true
+            ),
+            new Setting(
+                    "system_toasts",
+                    () -> ModConfig.general("system_toasts"),
+                    v -> ModConfig.INSTANCE.general.put("system_toasts", v),
+                    false
+            ),
+            new Setting(
+                    "tutorials",
+                    () -> ModConfig.general("tutorials"),
+                    v -> ModConfig.INSTANCE.general.put("tutorials", v),
                     true
             )
     };

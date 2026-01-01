@@ -15,7 +15,7 @@ public class ToastManagerMixin {
 
     @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
     private void blockRecipeToast(Toast toast, CallbackInfo ci) {
-        if (toast instanceof RecipeToast && ModConfig.general("recipes.toasts")) {
+        if (toast instanceof RecipeToast && ModConfig.general("recipes_toasts")) {
             ci.cancel();
         }
     }
