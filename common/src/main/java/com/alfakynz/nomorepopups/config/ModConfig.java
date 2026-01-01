@@ -5,21 +5,36 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModConfig {
+
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final File CONFIG_FILE = new File("config/nomorepopups.json");
+    private static final File CONFIG_FILE = new File("config/no-more-popups.json");
 
-    public boolean disableAdvancementsMessages = false;
-    public boolean disableAdvancementToasts = true;
-    public boolean disableExperimentalWarning = true;
-    public boolean disableMultiplayerWarning = true;
-    public boolean disableRecipeToasts = true;
-    public boolean disableResourcePackWarnings = true;
-    public boolean disableSystemToasts = false;
-    public boolean disableTutorialToasts = true;
+    public Map<String, Boolean> general = new HashMap<>();
+    public Map<String, Boolean> modded = new HashMap<>();
 
-    public static ModConfig INSTANCE = new ModConfig();
+    public static ModConfig INSTANCE = createDefault();
+
+    private static ModConfig createDefault() {
+        ModConfig config = new ModConfig();
+
+        config.general.put("advancements.messages", false);
+        config.general.put("advancements.toasts", true);
+        config.general.put("recipes.toasts", true);
+        config.general.put("tutorials", true);
+        config.general.put("system_toasts", false);
+        config.general.put("experimental_warning", true);
+        config.general.put("multiplayer_warning", true);
+        config.general.put("resource_pack_warnings", true);
+
+        config.modded.put("messages", false);
+        config.modded.put("nether_weather", false);
+
+        return config;
+    }
 
     public static void load() {
         if (CONFIG_FILE.exists()) {
@@ -27,9 +42,10 @@ public class ModConfig {
                 INSTANCE = GSON.fromJson(reader, ModConfig.class);
             } catch (IOException e) {
                 Constants.LOG.error("Failed to load NMP config, using default values.", e);
-                INSTANCE = new ModConfig();
+                INSTANCE = createDefault();
             }
         } else {
+            INSTANCE = createDefault();
             save();
         }
     }
@@ -50,5 +66,13 @@ public class ModConfig {
         } catch (IOException e) {
             Constants.LOG.error("Failed to save NMP config.", e);
         }
+    }
+
+    public static boolean general(String key) {
+        return INSTANCE.general.getOrDefault(key, true);
+    }
+
+    public static boolean modded(String key) {
+        return INSTANCE.modded.getOrDefault(key, true);
     }
 }

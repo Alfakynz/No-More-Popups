@@ -19,10 +19,10 @@ public class AdvancementMixin {
 
     @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true)
     private void onGameMessage(ClientboundSystemChatPacket packet, CallbackInfo ci) {
-        if (ModConfig.INSTANCE.disableAdvancementsMessages) {
+        if (ModConfig.general("advancements.messages")) {
             Component message = packet.content();
-
             ComponentContents content = message.getContents();
+
             if (content instanceof TranslatableContents translatableContent) {
                 String key = translatableContent.getKey();
                 if (key.startsWith("chat.type.advancement")) {

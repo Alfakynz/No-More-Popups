@@ -15,28 +15,28 @@ public class ToastManagerMixin {
 
     @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
     private void blockRecipeToast(Toast toast, CallbackInfo ci) {
-        if (toast instanceof RecipeToast&& ModConfig.INSTANCE.disableRecipeToasts) {
+        if (toast instanceof RecipeToast && ModConfig.general("recipes.toasts")) {
             ci.cancel();
         }
     }
 
     @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
     private void blockTutorialToast(Toast toast, CallbackInfo ci) {
-        if (toast instanceof TutorialToast && ModConfig.INSTANCE.disableTutorialToasts) {
+        if (toast instanceof TutorialToast && ModConfig.general("tutorials")) {
             ci.cancel();
         }
     }
 
     @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
     private void blockAdvancementToast(Toast toast, CallbackInfo ci) {
-        if (toast instanceof AdvancementToast && ModConfig.INSTANCE.disableAdvancementToasts) {
+        if (toast instanceof AdvancementToast && ModConfig.general("advancements.toasts")) {
             ci.cancel();
         }
     }
 
     @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
     private void blockSystemToast(Toast toast, CallbackInfo ci) {
-        if (toast instanceof SystemToast && ModConfig.INSTANCE.disableSystemToasts) {
+        if (toast instanceof SystemToast && ModConfig.general("system_toasts")) {
             ci.cancel();
         }
     }

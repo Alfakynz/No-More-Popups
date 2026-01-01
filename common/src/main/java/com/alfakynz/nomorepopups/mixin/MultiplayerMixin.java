@@ -16,7 +16,7 @@ public class MultiplayerMixin {
     @Inject(method = "load", at = @At("TAIL"))
     private void onLoad(CallbackInfo ci) {
         Options options = (Options) (Object) this;
-        if (ModConfig.INSTANCE.disableMultiplayerWarning) {
+        if (ModConfig.general("multiplayer_warning")) {
             options.skipMultiplayerWarning = true;
         }
     }
@@ -24,7 +24,7 @@ public class MultiplayerMixin {
     @Inject(method = "save", at = @At("TAIL"))
     private void onWrite(CallbackInfo ci) {
         Options options = (Options) (Object) this;
-        if (ModConfig.INSTANCE.disableMultiplayerWarning) {
+        if (ModConfig.general("multiplayer_warning")) {
             options.skipMultiplayerWarning = true;
         }
     }

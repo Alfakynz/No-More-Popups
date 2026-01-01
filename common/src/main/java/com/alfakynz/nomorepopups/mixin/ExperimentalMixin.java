@@ -14,6 +14,6 @@ public class ExperimentalMixin {
     
     @ModifyVariable(method = "confirmWorldCreation", at = @At("HEAD"), argsOnly = true)
     private static boolean removeExperimentalWarning(boolean original) {
-        return ModConfig.INSTANCE.disableExperimentalWarning || original;
+        return ModConfig.general("experimental_warning") || original;
     }
 }

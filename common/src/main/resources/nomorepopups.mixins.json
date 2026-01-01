@@ -10,7 +10,8 @@
       "ExperimentalWorldMixin",
       "MultiplayerMixin",
       "ResourcePackMixin",
-      "ToastManagerMixin"
+      "ToastManagerMixin",
+      "ModdedMessageMixin"
     ],
     "injectors": {
         "defaultRequire": 1
