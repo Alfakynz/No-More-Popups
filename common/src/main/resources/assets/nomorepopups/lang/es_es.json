@@ -11,7 +11,7 @@
   "option.no_more_popups.config.general.system_toasts": "Desactivar las ventanas emergentes del sistema",
   "option.no_more_popups.config.general.tutorials": "Desactivar el tutorial",
   "option.no_more_popups.config.modded": "Moddeado",
-  "option.no_more_popups.config.modded.messages": "Desactivar mensajes de mods",
+  "option.no_more_popups.config.modded.fastquit": "Desactivar las ventanas emergentes de FastQuit",
   "option.no_more_popups.config.modded.nether_weather": "Desactivar el mensaje de Nether Weather",
   "option.no_more_popups.config.no": "No",
   "option.no_more_popups.config.title": "Opciones de No More Pop-ups",

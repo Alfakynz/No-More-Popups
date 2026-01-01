@@ -65,9 +65,9 @@ public final class ConfigSettings {
 
     public static final Setting[] MODDED_SETTINGS = new Setting[] {
             new Setting(
-                    "messages",
-                    () -> ModConfig.modded("messages"),
-                    v -> ModConfig.INSTANCE.modded.put("messages", v),
+                    "fastquit",
+                    () -> ModConfig.modded("fastquit"),
+                    v -> ModConfig.INSTANCE.modded.put("fastquit", v),
                     false
             ),
             new Setting(

@@ -1,4 +1,4 @@
-package com.alfakynz.nomorepopups.mixin;
+package com.alfakynz.nomorepopups.mixin.compat;
 
 import com.alfakynz.nomorepopups.config.ModConfig;
 import net.minecraft.client.multiplayer.ClientPacketListener;
@@ -18,13 +18,11 @@ public class ModdedMessageMixin {
     @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true)
     private void onSystemChat(ClientboundSystemChatPacket packet, CallbackInfo ci) {
 
-        if (ModConfig.modded("messages")) return;
-
         Component message = packet.content();
         String plainText = message.getString();
 
         // Nether Weather
-        if (plainText.contains("Nether Weather") && !ModConfig.general("nether_weather")) {
+        if (plainText.contains("Nether Weather") && !ModConfig.modded("nether_weather")) {
             ci.cancel();
         }
     }
