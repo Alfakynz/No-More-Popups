@@ -13,7 +13,7 @@ import net.minecraftforge.network.NetworkConstants;
 public class NoMorePopupsForge {
 
     public NoMorePopupsForge() {
-        CommonClass.init();
+        NoMorePopups.init();
 
         if (Services.PLATFORM.isModLoaded("cloth_config")) {
             ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (a, b) -> true));
