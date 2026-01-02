@@ -22,7 +22,7 @@ public class ModdedMessageMixin {
         String plainText = message.getString();
 
         // Nether Weather
-        if (plainText.contains("Nether Weather") && !ModConfig.modded("nether_weather")) {
+        if (plainText.contains("Nether Weather") && ModConfig.modded("nether_weather")) {
             ci.cancel();
         }
     }
