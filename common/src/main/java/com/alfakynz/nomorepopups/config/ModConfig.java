@@ -25,19 +25,13 @@ public class ModConfig {
     private static ModConfig createDefault() {
         ModConfig config = new ModConfig();
 
-        config.general.put("advancements.messages", false);
-        config.general.put("advancements.toasts", true);
-        config.general.put("recipes_toasts", true);
-        config.general.put("tutorials", true);
-        config.general.put("system_toasts", false);
-        config.general.put("experimental_warning", true);
-        config.general.put("multiplayer_warning", true);
-        config.general.put("resource_pack_warnings", true);
+        for (ConfigSettings.Setting setting : ConfigSettings.GENERAL_SETTINGS) {
+            config.general.put(setting.key(), setting.defaultValue());
+        }
 
-        config.modded.put("chunks_fade_in", false);
-        config.modded.put("fastquit", false);
-        config.modded.put("frozenlib", false);
-        config.modded.put("nether_weather", false);
+        for (ConfigSettings.Setting setting : ConfigSettings.MODDED_SETTINGS) {
+            config.modded.put(setting.key(), setting.defaultValue());
+        }
 
         return config;
     }
@@ -57,6 +51,8 @@ public class ModConfig {
                         save();
                     } else {
                         INSTANCE = GSON.fromJson(root, ModConfig.class);
+                        ensureDefaults();
+                        save();
                     }
                 }
                 return;
@@ -67,6 +63,7 @@ public class ModConfig {
                 try (Reader reader = new FileReader(OLD_CONFIG_FILE)) {
                     JsonObject oldRoot = GSON.fromJson(reader, JsonObject.class);
                     INSTANCE = migrateOldFormat(oldRoot);
+                    ensureDefaults();
                 }
 
                 save();
@@ -138,5 +135,17 @@ public class ModConfig {
 
     public static boolean modded(String key) {
         return INSTANCE.modded.getOrDefault(key, true);
+    }
+
+    private static void ensureDefaults() {
+        ModConfig defaults = createDefault();
+
+        for (Map.Entry<String, Boolean> entry : defaults.general.entrySet()) {
+            INSTANCE.general.putIfAbsent(entry.getKey(), entry.getValue());
+        }
+
+        for (Map.Entry<String, Boolean> entry : defaults.modded.entrySet()) {
+            INSTANCE.modded.putIfAbsent(entry.getKey(), entry.getValue());
+        }
     }
 }
