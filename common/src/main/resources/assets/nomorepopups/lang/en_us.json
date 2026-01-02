@@ -15,6 +15,7 @@
   "option.no_more_popups.config.modded.fastquit": "Disable FastQuit toasts",
   "option.no_more_popups.config.modded.frozenlib": "Disable FrozenLib (WilderWild) toasts",
   "option.no_more_popups.config.modded.nether_weather": "Disable Nether Weather message",
+  "option.no_more_popups.config.modded.terralith": "Disable Terralith message",
   "option.no_more_popups.config.no": "No",
   "option.no_more_popups.config.title": "No More Pop-ups Options",
   "option.no_more_popups.config.yes": "Yes"

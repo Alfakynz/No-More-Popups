@@ -45,7 +45,8 @@ public final class ConfigSettings {
             moddedSetting("chunks_fade_in", false),
             moddedSetting("fastquit", false),
             moddedSetting("frozenlib", false),
-            moddedSetting("nether_weather", false)
+            moddedSetting("nether_weather", false),
+            moddedSetting("terralith", false)
     };
 
     private ConfigSettings() {}

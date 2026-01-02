@@ -27,5 +27,12 @@ public class ModdedMessageServerMixin {
                 && plainText.contains("was successfully loaded")) {
             ci.cancel();
         }
+
+        // Terralith
+        if (ModConfig.modded("terralith")
+                && plainText.contains("Hello, thank you for downloading ")
+                && plainText.contains("Terralith")) {
+            ci.cancel();
+        }
     }
 }

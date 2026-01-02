@@ -15,6 +15,7 @@
   "option.no_more_popups.config.modded.fastquit": "Desactivar las ventanas emergentes de FastQuit",
   "option.no_more_popups.config.modded.frozenlib": "Desactivar las ventanas emergentes de FrozenLib (WilderWild)",
   "option.no_more_popups.config.modded.nether_weather": "Desactivar el mensaje de Nether Weather",
+  "option.no_more_popups.config.modded.terralith": "Desactivar el mensaje de Terralith",
   "option.no_more_popups.config.no": "No",
   "option.no_more_popups.config.title": "Opciones de No More Pop-ups",
   "option.no_more_popups.config.yes": "Sí"

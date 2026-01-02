@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ModdedMessageClientMixin {
 
     @Unique
-    private static boolean No_More_Popups$blockingChunksFadeInUpdate = false;
+    private static boolean No_More_Popups$blockingChunksFadeInMessage = false;
 
     @Inject(
             method = "displayClientMessage(Lnet/minecraft/network/chat/Component;Z)V",
@@ -27,20 +27,21 @@ public class ModdedMessageClientMixin {
 
         String plainText = message.getString();
 
+        // Chunks Fade In
         if (ModConfig.modded("chunks_fade_in")
                 && plainText.contains("New version of")
                 && plainText.contains("Chunks Fade In")) {
 
-            No_More_Popups$blockingChunksFadeInUpdate = true;
+            No_More_Popups$blockingChunksFadeInMessage = true;
             ci.cancel();
             return;
         }
 
-        if (No_More_Popups$blockingChunksFadeInUpdate) {
+        if (No_More_Popups$blockingChunksFadeInMessage) {
             ci.cancel();
 
             if (plainText.contains("Click to download")) {
-                No_More_Popups$blockingChunksFadeInUpdate = false;
+                No_More_Popups$blockingChunksFadeInMessage = false;
             }
         }
     }

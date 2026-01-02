@@ -15,6 +15,7 @@
   "option.no_more_popups.config.modded.frozenlib": "Désactiver les pop-ups de FrozenLib (WilderWild)",
   "option.no_more_popups.config.modded.chunks_fade_in": "Désactiver le message de Chunks Fade In",
   "option.no_more_popups.config.modded.nether_weather": "Désactiver le message de Nether Weather",
+  "option.no_more_popups.config.modded.terralith": "Désactiver le message de Terralith",
   "option.no_more_popups.config.no": "Non",
   "option.no_more_popups.config.title": "Options de No More Pop-ups",
   "option.no_more_popups.config.yes": "Oui"
