@@ -13,6 +13,7 @@
   "option.no_more_popups.config.modded": "Moddeado",
   "option.no_more_popups.config.modded.chunks_fade_in": "Desactivar las ventanas emergentes de Chunks Fade In",
   "option.no_more_popups.config.modded.fastquit": "Desactivar las ventanas emergentes de FastQuit",
+  "option.no_more_popups.config.modded.frozenlib": "Desactivar las ventanas emergentes de FrozenLib (WilderWild)",
   "option.no_more_popups.config.modded.nether_weather": "Desactivar el mensaje de Nether Weather",
   "option.no_more_popups.config.no": "No",
   "option.no_more_popups.config.title": "Opciones de No More Pop-ups",

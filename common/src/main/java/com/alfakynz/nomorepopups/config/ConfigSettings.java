@@ -77,6 +77,12 @@ public final class ConfigSettings {
                     false
             ),
             new Setting(
+                    "frozenlib",
+                    () -> ModConfig.modded("frozenlib"),
+                    v -> ModConfig.INSTANCE.modded.put("frozenlib", v),
+                    false
+            ),
+            new Setting(
                     "nether_weather",
                     () -> ModConfig.modded("nether_weather"),
                     v -> ModConfig.INSTANCE.modded.put("nether_weather", v),

@@ -13,7 +13,8 @@
       "ToastManagerMixin",
       "accessor.SystemToastAccessor",
       "compat.ModdedMessageClientMixin",
-      "compat.ModdedMessageServerMixin"
+      "compat.ModdedMessageServerMixin",
+      "compat.ModdedToastMixin"
     ],
     "injectors": {
         "defaultRequire": 1

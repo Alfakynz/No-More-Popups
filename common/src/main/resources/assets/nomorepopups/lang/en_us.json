@@ -13,6 +13,7 @@
   "option.no_more_popups.config.modded": "Modded",
   "option.no_more_popups.config.modded.chunks_fade_in": "Disable Chunks Fade In message",
   "option.no_more_popups.config.modded.fastquit": "Disable FastQuit toasts",
+  "option.no_more_popups.config.modded.frozenlib": "Disable FrozenLib (WilderWild) toasts",
   "option.no_more_popups.config.modded.nether_weather": "Disable Nether Weather message",
   "option.no_more_popups.config.no": "No",
   "option.no_more_popups.config.title": "No More Pop-ups Options",

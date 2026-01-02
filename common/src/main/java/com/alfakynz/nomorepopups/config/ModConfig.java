@@ -36,6 +36,7 @@ public class ModConfig {
 
         config.modded.put("chunks_fade_in", false);
         config.modded.put("fastquit", false);
+        config.modded.put("frozenlib", false);
         config.modded.put("nether_weather", false);
 
         return config;

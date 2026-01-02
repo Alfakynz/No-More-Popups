@@ -12,6 +12,7 @@
   "option.no_more_popups.config.general.tutorials": "Désactiver le tutoriel",
   "option.no_more_popups.config.modded": "Moddé",
   "option.no_more_popups.config.modded.fastquit": "Désactiver les pop-ups de FastQuit",
+  "option.no_more_popups.config.modded.frozenlib": "Désactiver les pop-ups de FrozenLib (WilderWild)",
   "option.no_more_popups.config.modded.chunks_fade_in": "Désactiver le message de Chunks Fade In",
   "option.no_more_popups.config.modded.nether_weather": "Désactiver le message de Nether Weather",
   "option.no_more_popups.config.no": "Non",
