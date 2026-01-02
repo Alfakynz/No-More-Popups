@@ -7,6 +7,6 @@ public class NoMorePopupsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        CommonClass.init();
+        NoMorePopups.init();
     }
 }

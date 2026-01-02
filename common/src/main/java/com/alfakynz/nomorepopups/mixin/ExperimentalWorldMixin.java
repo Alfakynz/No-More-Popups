@@ -16,7 +16,7 @@ public class ExperimentalWorldMixin {
 
     @Inject(method = "worldGenSettingsLifecycle", at = @At("HEAD"), cancellable = true)
     private void disableExperimentalWorldWarning(CallbackInfoReturnable<Lifecycle> cir) {
-        if (ModConfig.INSTANCE.disableExperimentalWarning) {
+        if (ModConfig.general("experimental_warning")) {
             cir.setReturnValue(Lifecycle.stable());
             cir.cancel();
         }

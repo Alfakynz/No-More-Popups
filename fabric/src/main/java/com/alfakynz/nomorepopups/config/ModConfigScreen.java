@@ -4,30 +4,48 @@ import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import java.util.function.BooleanSupplier;
-import java.util.function.Consumer;
 
 public class ModConfigScreen {
+
+    public final static String defaultKey = "option.no_more_popups.config.";
+
     public static Screen create(Screen parent) {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(Component.translatable("option.no_more_popups.settings"))
+                .setTitle(Component.translatable(defaultKey + "title"))
                 .setSavingRunnable(ModConfig::save);
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-        var generalCategory = builder.getOrCreateCategory(Component.translatable("option.no_more_popups.settings.general"));
+        // General category
+        var generalCategory = builder.getOrCreateCategory(
+                Component.translatable(defaultKey + "general")
+        );
 
-        for (ConfigSettings.Setting setting : ConfigSettings.SETTINGS) {
-            String key = setting.key();
-            BooleanSupplier getter = setting.getter();
-            Consumer<Boolean> setter = setting.setter();
-            Boolean default_value = setting.defaultValue();
-
+        for (ConfigSettings.Setting setting : ConfigSettings.GENERAL_SETTINGS) {
             generalCategory.addEntry(entryBuilder
-                    .startBooleanToggle(Component.translatable("option.no_more_popups.settings." + key), getter.getAsBoolean())
-                    .setDefaultValue(default_value)
-                    .setSaveConsumer(setter)
+                    .startBooleanToggle(
+                            Component.translatable(defaultKey + "general." + setting.key()),
+                            setting.getter().getAsBoolean()
+                    )
+                    .setDefaultValue(setting.defaultValue())
+                    .setSaveConsumer(setting.setter())
+                    .build());
+        }
+
+        // Modded category
+        var moddedCategory = builder.getOrCreateCategory(
+                Component.translatable(defaultKey + "modded")
+        );
+
+        for (ConfigSettings.Setting setting : ConfigSettings.MODDED_SETTINGS) {
+            moddedCategory.addEntry(entryBuilder
+                    .startBooleanToggle(
+                            Component.translatable(defaultKey + "modded." + setting.key()),
+                            setting.getter().getAsBoolean()
+                    )
+                    .setDefaultValue(setting.defaultValue())
+                    .setSaveConsumer(setting.setter())
                     .build());
         }
 

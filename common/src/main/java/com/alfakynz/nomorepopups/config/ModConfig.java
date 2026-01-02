@@ -3,52 +3,149 @@ package com.alfakynz.nomorepopups.config;
 import com.alfakynz.nomorepopups.Constants;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import java.io.*;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ModConfig {
+
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-    private static final File CONFIG_FILE = new File("config/nomorepopups.json");
 
-    public boolean disableAdvancementsMessages = false;
-    public boolean disableAdvancementToasts = true;
-    public boolean disableExperimentalWarning = true;
-    public boolean disableMultiplayerWarning = true;
-    public boolean disableRecipeToasts = true;
-    public boolean disableResourcePackWarnings = true;
-    public boolean disableSystemToasts = false;
-    public boolean disableTutorialToasts = true;
+    private static final File NEW_CONFIG_FILE = new File("config/no-more-popups.json");
+    private static final File OLD_CONFIG_FILE = new File("config/nomorepopups.json");
 
-    public static ModConfig INSTANCE = new ModConfig();
+    public Map<String, Boolean> general = new TreeMap<>();
+    public Map<String, Boolean> modded = new TreeMap<>();
+
+    public static ModConfig INSTANCE = createDefault();
+
+    private static ModConfig createDefault() {
+        ModConfig config = new ModConfig();
+
+        for (ConfigSettings.Setting setting : ConfigSettings.GENERAL_SETTINGS) {
+            config.general.put(setting.key(), setting.defaultValue());
+        }
+
+        for (ConfigSettings.Setting setting : ConfigSettings.MODDED_SETTINGS) {
+            config.modded.put(setting.key(), setting.defaultValue());
+        }
+
+        return config;
+    }
 
     public static void load() {
-        if (CONFIG_FILE.exists()) {
-            try (Reader reader = new FileReader(CONFIG_FILE)) {
-                INSTANCE = GSON.fromJson(reader, ModConfig.class);
-            } catch (IOException e) {
-                Constants.LOG.error("Failed to load NMP config, using default values.", e);
-                INSTANCE = new ModConfig();
+        try {
+            // New file exists
+            if (NEW_CONFIG_FILE.exists()) {
+                try (Reader reader = new FileReader(NEW_CONFIG_FILE)) {
+                    JsonElement root = GSON.fromJson(reader, JsonElement.class);
+
+                    // New file but old format inside
+                    if (root.isJsonObject()
+                            && root.getAsJsonObject().has("disableAdvancementsMessages")) {
+
+                        INSTANCE = migrateOldFormat(root.getAsJsonObject());
+                        save();
+                    } else {
+                        INSTANCE = GSON.fromJson(root, ModConfig.class);
+                        ensureDefaults();
+                        save();
+                    }
+                }
+                return;
             }
-        } else {
+
+            // Only old file exists
+            if (OLD_CONFIG_FILE.exists()) {
+                try (Reader reader = new FileReader(OLD_CONFIG_FILE)) {
+                    JsonObject oldRoot = GSON.fromJson(reader, JsonObject.class);
+                    INSTANCE = migrateOldFormat(oldRoot);
+                    ensureDefaults();
+                }
+
+                save();
+                if (OLD_CONFIG_FILE.delete()) {
+                    Constants.LOG.info("Migrated No More Popups config to new format.");
+                }
+                return;
+            }
+
+            // No config at all
+            INSTANCE = createDefault();
             save();
+
+        } catch (Exception e) {
+            Constants.LOG.error("Failed to load or migrate No More Popups config, using defaults.", e);
+            INSTANCE = createDefault();
         }
     }
 
     public static void save() {
         try {
-            // Create the config dir if needed
-            File parent = CONFIG_FILE.getParentFile();
+            File parent = NEW_CONFIG_FILE.getParentFile();
             if (parent != null && !parent.exists()) {
                 if (!parent.mkdirs()) {
                     Constants.LOG.warn("Failed to create config directory: {}", parent.getAbsolutePath());
                 }
             }
 
-            try (Writer writer = new FileWriter(CONFIG_FILE)) {
+            INSTANCE.general = new TreeMap<>(INSTANCE.general);
+            INSTANCE.modded = new TreeMap<>(INSTANCE.modded);
+
+            try (Writer writer = new FileWriter(NEW_CONFIG_FILE)) {
                 GSON.toJson(INSTANCE, writer);
             }
         } catch (IOException e) {
-            Constants.LOG.error("Failed to save NMP config.", e);
+            Constants.LOG.error("Failed to save No More Popups config.", e);
+        }
+    }
+
+    private static ModConfig migrateOldFormat(JsonObject old) {
+        ModConfig config = createDefault();
+
+        map(old, "disableAdvancementsMessages", config.general, "advancements.messages");
+        map(old, "disableAdvancementToasts", config.general, "advancements.toasts");
+        map(old, "disableRecipeToasts", config.general, "recipes_toasts");
+        map(old, "disableTutorialToasts", config.general, "tutorials");
+        map(old, "disableSystemToasts", config.general, "system_toasts");
+        map(old, "disableExperimentalWarning", config.general, "experimental_warning");
+        map(old, "disableMultiplayerWarning", config.general, "multiplayer_warning");
+        map(old, "disableResourcePackWarnings", config.general, "resource_pack_warnings");
+
+        return config;
+    }
+
+    private static void map(
+            JsonObject old,
+            String oldKey,
+            Map<String, Boolean> target,
+            String newKey
+    ) {
+        if (old.has(oldKey)) {
+            target.put(newKey, old.get(oldKey).getAsBoolean());
+        }
+    }
+
+    public static boolean general(String key) {
+        return INSTANCE.general.getOrDefault(key, true);
+    }
+
+    public static boolean modded(String key) {
+        return INSTANCE.modded.getOrDefault(key, true);
+    }
+
+    private static void ensureDefaults() {
+        ModConfig defaults = createDefault();
+
+        for (Map.Entry<String, Boolean> entry : defaults.general.entrySet()) {
+            INSTANCE.general.putIfAbsent(entry.getKey(), entry.getValue());
+        }
+
+        for (Map.Entry<String, Boolean> entry : defaults.modded.entrySet()) {
+            INSTANCE.modded.putIfAbsent(entry.getKey(), entry.getValue());
         }
     }
 }

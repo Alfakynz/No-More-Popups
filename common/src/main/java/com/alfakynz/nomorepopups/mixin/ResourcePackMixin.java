@@ -15,7 +15,7 @@ public class ResourcePackMixin {
 
     @Inject(method = "isCompatible", at = @At("HEAD"), cancellable = true)
     private void alwaysCompatible(CallbackInfoReturnable<Boolean> cir) {
-        if (ModConfig.INSTANCE.disableResourcePackWarnings) {
+        if (ModConfig.general("resource_pack_warnings")) {
             cir.setReturnValue(true);
         }
     }

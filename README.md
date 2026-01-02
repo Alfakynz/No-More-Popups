@@ -23,6 +23,12 @@
 - Removes experimental world warning
 - Removes advancements messages in chat (disabled by default)
 - Includes settings to configure which pop-ups appear (available with [ModMenu](https://modrinth.com/mod/modmenu) and [Cloth Config API](https://modrinth.com/mod/cloth-config))
+- Removes some pop-ups or messages from mods (false by default):
+  - [Chunks Fade In](https://modrinth.com/project/JaNmzvA8)
+  - [FastQuit](https://modrinth.com/project/x1hIzbuY)
+  - [FrozenLib (Wilder Wild)](https://modrinth.com/project/9KawNmQc)
+  - [Nether Weather](https://modrinth.com/project/XrxtjryC)
+  - [Terralith](https://modrinth.com/project/8oi3bsk5)
 
 ## 🔄 Versions
 
