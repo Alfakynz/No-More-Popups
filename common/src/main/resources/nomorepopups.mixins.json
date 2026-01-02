@@ -12,7 +12,8 @@
       "ResourcePackMixin",
       "ToastManagerMixin",
       "accessor.SystemToastAccessor",
-      "compat.ModdedMessageMixin"
+      "compat.ModdedMessageClientMixin",
+      "compat.ModdedMessageServerMixin"
     ],
     "injectors": {
         "defaultRequire": 1

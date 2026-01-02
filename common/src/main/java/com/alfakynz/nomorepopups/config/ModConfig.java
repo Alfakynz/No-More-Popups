@@ -34,6 +34,7 @@ public class ModConfig {
         config.general.put("multiplayer_warning", true);
         config.general.put("resource_pack_warnings", true);
 
+        config.modded.put("chunks_fade_in", false);
         config.modded.put("fastquit", false);
         config.modded.put("nether_weather", false);
 

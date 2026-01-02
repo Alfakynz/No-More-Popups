@@ -11,6 +11,7 @@
   "option.no_more_popups.config.general.system_toasts": "Disable system toasts",
   "option.no_more_popups.config.general.tutorials": "Disable tutorial toasts",
   "option.no_more_popups.config.modded": "Modded",
+  "option.no_more_popups.config.modded.chunks_fade_in": "Disable Chunks Fade In message",
   "option.no_more_popups.config.modded.fastquit": "Disable FastQuit toasts",
   "option.no_more_popups.config.modded.nether_weather": "Disable Nether Weather message",
   "option.no_more_popups.config.no": "No",

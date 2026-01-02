@@ -65,6 +65,12 @@ public final class ConfigSettings {
 
     public static final Setting[] MODDED_SETTINGS = new Setting[] {
             new Setting(
+                    "chunks_fade_in",
+                    () -> ModConfig.modded("chunks_fade_in"),
+                    v -> ModConfig.INSTANCE.modded.put("chunks_fade_in", v),
+                    false
+            ),
+            new Setting(
                     "fastquit",
                     () -> ModConfig.modded("fastquit"),
                     v -> ModConfig.INSTANCE.modded.put("fastquit", v),

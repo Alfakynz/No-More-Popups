@@ -10,10 +10,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Mixin for removing modded messages.
+ * Mixin for removing modded messages. (Server-side)
  */
 @Mixin(ClientPacketListener.class)
-public class ModdedMessageMixin {
+public class ModdedMessageServerMixin {
 
     @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true)
     private void onSystemChat(ClientboundSystemChatPacket packet, CallbackInfo ci) {
