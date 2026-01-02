@@ -27,9 +27,9 @@ public class ModdedMessageClientMixin {
 
         String plainText = message.getString();
 
-        if (plainText.contains("New version of")
-                && plainText.contains("Chunks Fade In")
-                && ModConfig.modded("chunks_fade_in")) {
+        if (ModConfig.modded("chunks_fade_in")
+                && plainText.contains("New version of")
+                && plainText.contains("Chunks Fade In")) {
 
             No_More_Popups$blockingChunksFadeInUpdate = true;
             ci.cancel();
