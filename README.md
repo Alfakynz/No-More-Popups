@@ -63,8 +63,7 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Compatibility with other Minecraft versions (for Neo/Forge)
-- Removal of pop-ups added by other mods
+Nothing for now, but feel free to suggest any feature you want!
 
 ## 📦 Modpack
 
