@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPacketListener.class)
 public class ModdedMessageServerMixin {
 
-    @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true, remap = false)
     private void onSystemChat(ClientboundSystemChatPacket packet, CallbackInfo ci) {
 
         Component message = packet.content();

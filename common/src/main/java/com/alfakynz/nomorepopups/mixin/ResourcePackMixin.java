@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PackCompatibility.class)
 public class ResourcePackMixin {
 
-    @Inject(method = "isCompatible", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "isCompatible", at = @At("HEAD"), cancellable = true, remap = false)
     private void alwaysCompatible(CallbackInfoReturnable<Boolean> cir) {
         if (ModConfig.general("resource_pack_warnings")) {
             cir.setReturnValue(true);

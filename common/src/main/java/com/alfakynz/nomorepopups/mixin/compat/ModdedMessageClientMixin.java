@@ -19,12 +19,27 @@ public class ModdedMessageClientMixin {
     private static boolean No_More_Popups$blockingChunksFadeInMessage = false;
 
     @Inject(
-            method = "displayClientMessage(Lnet/minecraft/network/chat/Component;Z)V",
+            method = "sendSystemMessage(Lnet/minecraft/network/chat/Component;)V",
             at = @At("HEAD"),
-            cancellable = true
+            cancellable = true,
+            remap = false
     )
-    private void onDisplayClientMessage(Component message, boolean overlay, CallbackInfo ci) {
+    private void onSendSystemMessage(Component message, CallbackInfo ci) {
+        no_More_Popups$handleMessage(message, ci);
+    }
 
+    @Inject(
+            method = "sendOverlayMessage(Lnet/minecraft/network/chat/Component;)V",
+            at = @At("HEAD"),
+            cancellable = true,
+            remap = false
+    )
+    private void onSendOverlayMessage(Component message, CallbackInfo ci) {
+        no_More_Popups$handleMessage(message, ci);
+    }
+
+    @Unique
+    private static void no_More_Popups$handleMessage(Component message, CallbackInfo ci) {
         String plainText = message.getString();
 
         // Chunks Fade In

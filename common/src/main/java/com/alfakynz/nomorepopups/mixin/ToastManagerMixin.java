@@ -11,31 +11,31 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /**
  * Mixin for removing toasts (including Recipe, Tutorial, Advancement and System toasts)
  */
-@Mixin(ToastComponent.class)
+@Mixin(ToastManager.class)
 public class ToastManagerMixin {
 
-    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true, remap = false)
     private void blockRecipeToast(Toast toast, CallbackInfo ci) {
         if (toast instanceof RecipeToast && ModConfig.general("recipes_toasts")) {
             ci.cancel();
         }
     }
 
-    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true, remap = false)
     private void blockTutorialToast(Toast toast, CallbackInfo ci) {
         if (toast instanceof TutorialToast && ModConfig.general("tutorials")) {
             ci.cancel();
         }
     }
 
-    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true, remap = false)
     private void blockAdvancementToast(Toast toast, CallbackInfo ci) {
         if (toast instanceof AdvancementToast && ModConfig.general("advancements.toasts")) {
             ci.cancel();
         }
     }
 
-    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true, remap = false)
     private void blockSystemToast(Toast toast, CallbackInfo ci) {
         if (!(toast instanceof SystemToast systemToast)) {
             return;

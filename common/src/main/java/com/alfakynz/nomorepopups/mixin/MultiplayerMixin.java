@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Options.class)
 public class MultiplayerMixin {
 
-    @Inject(method = "load", at = @At("TAIL"))
+    @Inject(method = "load", at = @At("TAIL"), remap = false)
     private void onLoad(CallbackInfo ci) {
         Options options = (Options) (Object) this;
         if (ModConfig.general("multiplayer_warning")) {
@@ -21,7 +21,7 @@ public class MultiplayerMixin {
         }
     }
 
-    @Inject(method = "save", at = @At("TAIL"))
+    @Inject(method = "save", at = @At("TAIL"), remap = false)
     private void onWrite(CallbackInfo ci) {
         Options options = (Options) (Object) this;
         if (ModConfig.general("multiplayer_warning")) {
