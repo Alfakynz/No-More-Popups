@@ -43,8 +43,9 @@
 | 1.21.x    | ✅     | ❌    | ❌       | ✅    |
 | 26.1.x    | ✅     | ❌    | ✅       | ❌    |
 
-Fabric >= 0.16.4 <br />
-Forge >= 47.1.47
+Fabric >= 0.16.4 / 0.18.4 <br />
+Forge >= 47.1.47 <br />
+NeoForge >= 26.1.0.1-beta
 
 # ⬇️ Installation
 
