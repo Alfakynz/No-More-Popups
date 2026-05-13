@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PrimaryLevelData.class)
 public class ExperimentalWorldMixin {
 
-    @Inject(method = "worldGenSettingsLifecycle", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "worldGenSettingsLifecycle", at = @At("HEAD"), cancellable = true, remap = false)
     private void disableExperimentalWorldWarning(CallbackInfoReturnable<Lifecycle> cir) {
         if (ModConfig.general("experimental_warning")) {
             cir.setReturnValue(Lifecycle.stable());

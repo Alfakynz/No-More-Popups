@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ToastComponent.class)
 public class ModdedToastMixin {
 
-    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "addToast", at = @At("HEAD"), cancellable = true, remap = false)
     private void blockFrozenLibToasts(Toast toast, CallbackInfo ci) {
 
         // FrozenLib

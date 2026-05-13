@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ClientPacketListener.class)
 public class AdvancementMixin {
 
-    @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "handleSystemChat", at = @At("HEAD"), cancellable = true, remap = false)
     private void onGameMessage(ClientboundSystemChatPacket packet, CallbackInfo ci) {
         if (ModConfig.general("advancements.messages")) {
             Component message = packet.content();

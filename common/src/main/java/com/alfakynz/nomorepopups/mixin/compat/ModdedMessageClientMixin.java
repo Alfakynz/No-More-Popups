@@ -21,11 +21,12 @@ public class ModdedMessageClientMixin {
     @Inject(
             method = "displayClientMessage(Lnet/minecraft/network/chat/Component;Z)V",
             at = @At("HEAD"),
-            cancellable = true
+            cancellable = true,
+            remap = false
     )
-    private void onDisplayClientMessage(Component message, boolean overlay, CallbackInfo ci) {
+    private void onDisplayClientMessage(Component chatComponent, boolean actionBar, CallbackInfo ci) {
 
-        String plainText = message.getString();
+        String plainText = chatComponent.getString();
 
         // Chunks Fade In
         if (ModConfig.modded("chunks_fade_in")

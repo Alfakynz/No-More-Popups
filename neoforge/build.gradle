@@ -1,0 +1,50 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+repositories {
+    maven { url "https://maven.shedaniel.me/" }
+}
+
+neoForge {
+    version = neoforge_version
+
+    validateAccessTransformers = true
+
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+dependencies {
+    implementation project(":common")
+    annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
+
+    // Dependencies
+    compileOnly("me.shedaniel.cloth:cloth-config-neoforge:${clothconfig_version}")
+    runtimeOnly("me.shedaniel.cloth:cloth-config-neoforge:${clothconfig_version}")
+}
+
+jar {
+    manifest.attributes([
+            "MixinConfigs": "${mod_id}.mixins.json,${mod_id}.neoforge.mixins.json"
+    ])
+}
