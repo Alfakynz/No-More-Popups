@@ -22,9 +22,3 @@ mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
-[[dependencies.${mod_id}]]
-modId = "cloth_config"
-mandatory = false
-versionRange = "${clothconfig_version}"
-ordering = "NONE"
-side = "BOTH"
