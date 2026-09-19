@@ -3,10 +3,14 @@ package com.alfakynz.nomorepopups.mixin;
 import com.alfakynz.nomorepopups.config.ModConfig;
 import com.alfakynz.nomorepopups.mixin.accessor.SystemToastAccessor;
 import net.minecraft.client.gui.components.toasts.*;
+import net.minecraft.util.FormattedCharSequence;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.List;
 
 /**
  * Mixin for removing toasts (including Recipe, Tutorial, Advancement and System toasts)
@@ -42,7 +46,7 @@ public class ToastManagerMixin {
         }
 
         SystemToastAccessor accessor = (SystemToastAccessor) systemToast;
-        boolean isFastQuitToast = accessor.getTitle().getString().contains("FastQuit");
+        boolean isFastQuitToast = no_More_Popups$flatten(accessor.getTitleLines()).contains("FastQuit");
         boolean disableToast;
 
         if (isFastQuitToast) {
@@ -54,5 +58,17 @@ public class ToastManagerMixin {
         if (disableToast) {
             ci.cancel();
         }
+    }
+
+    @Unique
+    private static String no_More_Popups$flatten(List<FormattedCharSequence> lines) {
+        StringBuilder sb = new StringBuilder();
+        for (FormattedCharSequence line : lines) {
+            line.accept((_, _, codePoint) -> {
+                sb.appendCodePoint(codePoint);
+                return true;
+            });
+        }
+        return sb.toString();
     }
 }

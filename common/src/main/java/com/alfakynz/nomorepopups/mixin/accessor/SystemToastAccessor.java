@@ -11,8 +11,8 @@ import java.util.List;
 @Mixin(SystemToast.class)
 public interface SystemToastAccessor {
 
-    @Accessor(value = "title", remap = false)
-    Component getTitle();
+    @Accessor(value = "titleLines", remap = false)
+    List<FormattedCharSequence> getTitleLines();
 
     @Accessor(value = "messageLines", remap = false)
     List<FormattedCharSequence> getMessageLines();
