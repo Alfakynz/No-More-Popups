@@ -10,6 +10,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * Mixin for removing the narrator entirely.
+ */
 @Mixin(GameNarrator.class)
 public class NarratorMixin {
 
