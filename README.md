@@ -18,10 +18,11 @@
 - Removes Tutorial pop-ups
 - Removes Advancement pop-ups
 - Removes System pop-ups
-- Removes resource pack warning
-- Removes multiplayer warning
-- Removes experimental world warning
-- Removes advancements messages in chat (disabled by default)
+- Removes Narrator pop-ups
+- Removes Resource Pack warning
+- Removes Multiplayer warning
+- Removes Experimental World warning
+- Removes Advancements messages in chat (disabled by default)
 - Includes settings to configure which pop-ups appear (available with [ModMenu](https://modrinth.com/mod/modmenu) and [Cloth Config API](https://modrinth.com/mod/cloth-config))
 - Removes some pop-ups or messages from mods (false by default):
   - [Chunks Fade In](https://modrinth.com/project/JaNmzvA8)

@@ -6,6 +6,7 @@
   "option.no_more_popups.config.general.advancements.toasts": "Disable advancements toasts",
   "option.no_more_popups.config.general.experimental_warning": "Disable experimental warning",
   "option.no_more_popups.config.general.multiplayer_warning": "Disable multiplayer warning",
+  "option.no_more_popups.config.general.narrator": "Disable narrator screen",
   "option.no_more_popups.config.general.recipes_toasts": "Disable recipe toasts",
   "option.no_more_popups.config.general.resource_pack_warnings": "Disable resource pack warnings",
   "option.no_more_popups.config.general.system_toasts": "Disable system toasts",

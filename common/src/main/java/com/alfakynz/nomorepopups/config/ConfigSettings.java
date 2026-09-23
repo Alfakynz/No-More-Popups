@@ -35,6 +35,7 @@ public final class ConfigSettings {
             generalSetting("advancements.toasts", true),
             generalSetting("experimental_warning", true),
             generalSetting("multiplayer_warning", true),
+            generalSetting("narrator", true),
             generalSetting("recipes_toasts", true),
             generalSetting("resource_pack_warnings", true),
             generalSetting("system_toasts", false),
