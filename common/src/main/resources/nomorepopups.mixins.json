@@ -8,7 +8,7 @@
       "AdvancementMixin",
       "ExperimentalMixin",
       "ExperimentalWorldMixin",
-      "NarratorMixin",
+      "AccessibilityMixin",
       "OptionsMixin",
       "ResourcePackMixin",
       "ToastManagerMixin",
