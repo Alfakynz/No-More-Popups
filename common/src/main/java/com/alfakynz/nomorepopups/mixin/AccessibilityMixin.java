@@ -17,7 +17,7 @@ public abstract class AccessibilityMixin {
     @Shadow
     public abstract void onClose();
 
-    @Inject(method = "init", at = @At("HEAD"), cancellable = true, remap = false)
+    @Inject(method = "init", at = @At("HEAD"), cancellable = true)
     private void nomorepopups$skipOnboarding(CallbackInfo ci) {
         if (ModConfig.general("narrator")) {
             ci.cancel();
